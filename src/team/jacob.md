@@ -1,5 +1,5 @@
 ---
 title: Jacob
-bio: I am dope
+bio: I made this site
 ---
 
