@@ -5,8 +5,6 @@ backend:
 
 media_folder: static/images/uploads
 public_folder: /images/uploads
-site_url: https://taw-org-staging.netlify.com
-display_url: https://taw-org-staging.netlify.com
 logo_url: https://taw-org-staging.netlify.com/images/TAW-Brand-Logo19.svg
 
 
@@ -48,7 +46,7 @@ collections:
   - name: 'speakers2018'
     label: 'Speakers 2018'
     label_singular: 'Speaker'
-    folder: 'src/2018/speakers2018'
+    folder: 'src/2018/speakers'
     create: true
     slug: '{{slug}}'
     fields:
