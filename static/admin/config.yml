@@ -44,12 +44,10 @@ collections:
   - name: 'speakers2018'
     label: 'Speakers 2018'
     label_singular: 'Speaker'
-    folder: 'src/2018/speakers2018'
+    folder: 'src/speakers2018'
     create: true
     slug: '{{slug}}'
     fields:
       - { label: 'Speaker Name', name: 'title', widget: 'string' }
       - { label: 'Job Title', name: 'jobTitle', widget: 'string', pattern: ['^.{1,80}$', 'Must have no more than 80 characters']}
       - { label: 'Website/Company Link', name: 'links', widget: 'string', hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
-      - {label: 'Headshot', name: 'headshot', widget: 'image', required: false}
-      - {label: "Gallery", name: "galleryImages", widget: "list", required: false, field: {label: Image, name: image, widget: image}}
