@@ -54,9 +54,10 @@ collections:
       - { label: 'Job Title', name: 'jobTitle', widget: 'string', pattern: ['^.{1,80}$', 'Must have no more than 80 characters']}
       - { label: 'Website/Company Link', name: 'links', widget: 'string', hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
       - {label: 'Headshot', name: 'headshot', widget: 'image', default: '', media_library:, config:, multiple: false}
+      - { label: 'Description', name: 'description', widget: 'string', pattern: ['^.{1,1600}$', 'Must have no more than 1,600 characters... This should not be hard']}
       - label: 'Talks'
         name: 'talks'
         widget: 'list'
         required: false
         fields:
-          - {label: 'Talk(Team test)', name: 'talk', widget: 'relation', collection: 'team', searchFields: ['title'], valueField: 'title', displayFields: ['title', 'bio']}
+          - {label: 'Talk(Team test)', name: 'talk', widget: 'relation', collection: 'team', searchFields: ['title'], valueField: '{{slug}}', displayFields: ['title', 'bio']}
