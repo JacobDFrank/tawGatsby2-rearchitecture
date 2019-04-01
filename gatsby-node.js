@@ -34,7 +34,7 @@ exports.createPages = ({
       {
         allMarkdownRemark(filter: {
             fileAbsolutePath: {
-              regex: '\/projects/'
+              regex: "\/projects/"
             }
           }) {
           edges {
@@ -44,7 +44,7 @@ exports.createPages = ({
                 title
                 URLpath
                 published
-                date(formatString: 'MMMM DD, YYYY')
+                date(formatString: "MMMM DD, YYYY")
                 description
                 tags
               }
