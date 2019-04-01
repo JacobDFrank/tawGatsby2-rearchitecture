@@ -52,7 +52,7 @@ collections:
     fields:
       - { label: 'Speaker Name', name: 'title', widget: 'string' }
       - { label: 'Job Title', name: 'jobTitle', widget: 'string', pattern: ['^.{1,80}$', 'Must have no more than 80 characters']}
-      - { label: 'Website/Company Link', name: 'links', widget: 'string', hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
+      - { label: 'Website/Company Link', name: 'speakerLink', widget: 'string', hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
       - {label: 'Headshot', name: 'headshot', widget: 'image', default: '', media_library:, config:, multiple: false}
       - { label: 'Description', name: 'description', widget: 'string', pattern: ['^.{1,1600}$', 'Must have no more than 1,600 characters... This should not be hard']}
       - label: 'Talks'
