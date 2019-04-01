@@ -59,8 +59,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'team',
-        path: `${__dirname}/src/speakers2018`,
+        name: 'speakers2018',
+        path: `${__dirname}/src/2018/speakers`,
       },
     },
     'gatsby-transformer-remark',
