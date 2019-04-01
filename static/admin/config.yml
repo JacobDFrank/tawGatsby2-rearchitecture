@@ -51,6 +51,5 @@ collections:
       - { label: 'Speaker Name', name: 'title', widget: 'string' }
       - { label: 'Job Title', name: 'jobTitle', widget: 'string', pattern: ['^.{1,80}$', 'Must have no more than 80 characters']}
       - { label: 'Website/Company Link', name: 'links', widget: 'string', hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
-      # default: '', media_library:, config:, multiple: false
-      - {label: 'Headshot', name: 'headshot', widget: 'image'}
+      - {label: 'Headshot', name: 'headshot', widget: 'image', required: false}
       - {label: "Gallery", name: "galleryImages", widget: "list", required: false, field: {label: Image, name: image, widget: image}}
