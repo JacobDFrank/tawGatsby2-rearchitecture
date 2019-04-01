@@ -1,7 +1,7 @@
 backend:
   name: github
   branch: master
-  repo: JacobDFrank/jacobdfrank
+  repo: JacobDFrank/tawGatsby2-rearchitecture
 
 media_folder: src/images
 public_folder: /img
@@ -44,7 +44,7 @@ collections:
   - name: 'speakers2018'
     label: 'Speakers 2018'
     label_singular: 'Speaker'
-    folder: 'src/2018/speakers'
+    folder: 'src/2018/speakers2018'
     create: true
     slug: '{{slug}}'
     fields:
