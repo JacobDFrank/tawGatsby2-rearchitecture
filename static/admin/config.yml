@@ -53,4 +53,4 @@ collections:
       - { label: 'Website/Company Link', name: 'links', widget: 'string', hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
       # default: '', media_library:, config:, multiple: false
       - {label: 'Headshot', name: 'headshot', widget: 'image'}
-      - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image}}
+      - {label: "Gallery", name: "galleryImages", widget: "list", required: false, field: {label: Image, name: image, widget: image}}
