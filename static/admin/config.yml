@@ -3,16 +3,16 @@ backend:
   branch: master
   repo: JacobDFrank/jacobdfrank
 
-media_folder: static/img
+media_folder: src/images
 public_folder: /img
 
 collections:
-  - name: "content"
-    label: "Pages"
+  - name: 'content'
+    label: 'Pages'
     files:
-      - label: "Home Page"
-        name: "Home"
-        file: "src/content/Home.md"
+      - label: 'Home Page'
+        name: 'Home'
+        file: 'src/content/Home.md'
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: string}
@@ -41,3 +41,15 @@ collections:
       - { label: 'Project Tags', name: 'tags', widget: 'string', pattern: ['^.{1,44}$', 'Must have no more than 44 characters']}
       - { label: 'Time Period', hint: 'Ex: Summer 2017 or Annually, Completed Each Fall', name: 'timePeriod', widget: 'string', pattern: ['^.{1,32}$', 'Must have no more than 32 characters']}
       - { label: 'Project Case Study', hint: 'Write about it, you can do it in markdown', name: 'body', widget: 'markdown'}
+  - name: 'speakers2018'
+    label: 'Speakers 2018'
+    label_singular: 'Speaker'
+    folder: 'src/2018/speakers'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Speaker Name', name: 'title', widget: 'string' }
+      - { label: 'Job Title', name: 'jobTitle', widget: 'string', pattern: ['^.{1,80}$', 'Must have no more than 80 characters']}
+      - { label: 'Website/Company Link', name: 'links', widget: 'string', hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
+      - {label: 'Headshot', name: 'headshot', widget: 'image', default: '', media_library:, config:, multiple: false}
+      - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image}}
