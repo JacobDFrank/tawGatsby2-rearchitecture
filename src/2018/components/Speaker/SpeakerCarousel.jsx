@@ -23,7 +23,7 @@ class SpeakerCarousel extends React.Component {
   render() {
     return (
       <div>
-        <DragScroll height={'unset'} width={'unset'} className={classnames(styles.speaker_lineup__Carousel, 'flex gridish-container--complete')}>
+        <DragScroll height={'unset'} width={'unset'} className={classnames(styles.speaker_lineup__Carousel, 'flex')}>
           <div className={classnames('flex')}>
             {this.createPeople(data.speakers)}
           </div>
