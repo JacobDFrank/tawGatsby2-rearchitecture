@@ -2,13 +2,14 @@ import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 
 const POST_ARCHIVE_QUERY = graphql`
-      query ArchiveQuery {
+  query ArchiveQuery {
         allMarkdownRemark(
           limit: 6,
-          filter: { fileAbsolutePath: {regex : "\/projects/"} },
+          filter: { fileAbsolutePath: {regex : "\/projects/"}, frontmatter: { published: { ne: false } } },
           sort: {
             order: DESC,
-            fields: [frontmatter___date]
+            fields: [frontmatter___date],
+            
         }) {
           edges {
             node {
@@ -24,7 +25,7 @@ const POST_ARCHIVE_QUERY = graphql`
           }
         }
       }
-    `;
+`;
 
 const Archive = () => (
   <StaticQuery

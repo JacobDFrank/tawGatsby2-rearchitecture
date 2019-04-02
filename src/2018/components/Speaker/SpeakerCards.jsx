@@ -50,9 +50,6 @@ export default class SpeakerCard extends Component {
 
   render() {
     const props = this.props;
-    let imageURLPrefix = 'https://thoughtatwork.cias.rit.edu/assets/graphics/2018-imagery/speaker-headshots/';
-    let headShot = imageURLPrefix + props.headshot + '.jpg';
-    let name = props.firstName + ' ' + props.lastName;
 
     return (
       <div>
@@ -60,14 +57,14 @@ export default class SpeakerCard extends Component {
           className={classnames(styles.cardSize)}
         >
           <img className={classnames(styles.headshotContainer)}
-            src={headShot}
+            src={'../../' + props.headshot}
             onClick={this.addModalClick}
           />
           <div
             onClick={this.addModalClick}
             className={classnames(styles.speakerCard_text)}>
             <h2 className={classnames(styles.speakerCard_text__spacing, styles.speakerCard_text__hover_color)}>
-              {name}
+              {props.name}
             </h2>
             <p className={classnames(styles.speakerCard_text__hover_color)}>{props.job}</p>
           </div>
@@ -98,7 +95,7 @@ export default class SpeakerCard extends Component {
                       </button>
                     </div>
                   </div>
-                  <SpeakerModal links={props.links} name={name} bio={props.bio} job={props.job} headshot={headShot} />
+                  <SpeakerModal links={props.links} name={props.name} bio={props.bio} job={props.job} headshot={'../../' + props.headshot} />
                 </div>
               </div>
             </div>
