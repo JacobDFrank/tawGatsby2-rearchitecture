@@ -63,6 +63,13 @@ module.exports = {
         path: `${__dirname}/src/2018/speakers`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'team2018',
+        path: `${__dirname}/src/2018/team`,
+      },
+    },
     'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-manifest', // customize this so that when the site is saved in a bookmark, etc that the icon, color, and information can be stored on someone's device correctly

@@ -43,6 +43,19 @@ collections:
       - { label: 'Project Tags', name: 'tags', widget: 'string', pattern: ['^.{1,44}$', 'Must have no more than 44 characters']}
       - { label: 'Time Period', hint: 'Ex: Summer 2017 or Annually, Completed Each Fall', name: 'timePeriod', widget: 'string', pattern: ['^.{1,32}$', 'Must have no more than 32 characters']}
       - { label: 'Project Case Study', hint: 'Write about it, you can do it in markdown', name: 'body', widget: 'markdown'}
+  - name: 'team2018'
+    label: 'Team 2018'
+    label_singular: 'Team Member'
+    folder: 'src/2018/team'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Team Member Name', name: 'title', widget: 'string' }
+      - {label: 'Headshot', name: 'headshot', widget: 'image'}
+      - { label: 'TAW Role/Team', name: 'tawRole', widget: 'string', required: true, hint: 'What your role within TAW is or what you worked on. Ex: Signage, Badges, Graphics, Big @ Sign', pattern: ['^.{1,80}$', 'Must have no more than 80 characters']}
+      - { label: 'Major/Concentrations', name: 'major', widget: 'string', required: true, hint: 'Ex: Design/Mechanical Engineering or Industrial Design', pattern: ['^.{1,40}$', 'Must have no more than 40 characters']}
+      - { label: "Year", name: "year", widget: "select", required: true, options: ["Freshman", "Sophomore", "Junior", "Senior"] }
+      - { label: 'Website/Portfolio Link', name: 'webpage', widget: 'string', required: false, hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
   - name: 'speakers2018'
     label: 'Speakers 2018'
     label_singular: 'Speaker'
