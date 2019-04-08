@@ -2,6 +2,6 @@
 title: Abby Davis
 headshot: images/uploads/Abby_Davis.jpg
 role: Graphics
-year: Graphic Design / Advertising &amp
-major: Senior
+year: Senior
+major: Graphic Design / Advertising &amp
 ---

@@ -2,7 +2,7 @@
 title: April Lau
 headshot: images/uploads/April_Lau.jpg
 role: Title Sequence
-year: 3D Animation
-major: Senior
+year: Senior
+major: 3D Animation
 webpage: https://vimeo.com/aprillau
 ---

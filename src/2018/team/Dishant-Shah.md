@@ -2,7 +2,7 @@
 title: Dishant Shah
 headshot: images/uploads/Dishant_Shah.jpg
 role: Outreach
-year: Product Design
-major: Senior
+year: Senior
+major: Product Design
 webpage: https://dishant-ux.com
 ---

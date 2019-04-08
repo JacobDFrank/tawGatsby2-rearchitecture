@@ -2,7 +2,7 @@
 title: Christine Van
 headshot: images/uploads/Christine_Van.jpg
 role: Graphics
-year: New Media Design
-major: Junior
+year: Junior
+major: New Media Design
 webpage: https://www.instagram.com/friedeggbae/
 ---

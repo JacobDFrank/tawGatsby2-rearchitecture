@@ -2,7 +2,7 @@
 title: Justin Dorland
 headshot: images/uploads/Justin_Dorland.jpg
 role: Black Ops
-year: Industrial Design/Mechanical Engineering
-major: Senior
+year: Senior
+major: Industrial Design/Mechanical Engineering
 webpage: https://www.justindorland.com/
 ---

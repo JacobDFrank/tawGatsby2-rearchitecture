@@ -1,5 +1,5 @@
 ---
-major: Patrick Ly
+title: Patrick Ly
 headshot: images/uploads/Patrick_Ly.jpg
 role: Web Development
 major: Computer Science

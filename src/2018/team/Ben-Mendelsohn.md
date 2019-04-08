@@ -2,7 +2,7 @@
 title: Ben Mendelsohn
 headshot: images/uploads/Ben_Mendelsohn.jpg
 role: Web Design & Style Guide
-year: New Media Design
-major: Sophomore
+year: Sophomore
+major: New Media Design
 webpage: https://www.bmendelsohn.com
 ---
