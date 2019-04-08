@@ -1,5 +1,5 @@
 ---
-title: Dishant Shah
+name: Dishant Shah
 headshot: images/uploads/Dishant_Shah.jpg
 role: Outreach
 year: Senior

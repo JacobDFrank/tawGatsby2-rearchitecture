@@ -1,5 +1,5 @@
 ---
-title: Lydia Krogh
+name: Lydia Krogh
 headshot: images/uploads/Lydia_Krogh.jpg
 role: Signage
 year: Senior

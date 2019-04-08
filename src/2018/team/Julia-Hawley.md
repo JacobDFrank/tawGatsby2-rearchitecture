@@ -1,5 +1,5 @@
 ---
-title: Julia Hawley
+name: Julia Hawley
 headshot: images/uploads/Julia_Hawley.jpg
 role: Signage
 year: Sophomore

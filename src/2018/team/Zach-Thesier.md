@@ -1,5 +1,5 @@
 ---
-title: Zach Thesier
+name: Zach Thesier
 headshot: images/uploads/Zach_Thesier.jpg
 role: Swag
 year: Junior

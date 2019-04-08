@@ -1,5 +1,5 @@
 ---
-title: Erica Stevens
+name: Erica Stevens
 headshot: images/uploads/Erica_Stevens.jpg
 role: TAW Co-coordinator, Signage Lead and Volunteer Coordinator
 year: Senior

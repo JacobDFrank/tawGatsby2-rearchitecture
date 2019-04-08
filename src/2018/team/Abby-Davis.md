@@ -1,5 +1,5 @@
 ---
-title: Abby Davis
+name: Abby Davis
 headshot: images/uploads/Abby_Davis.jpg
 role: Graphics
 year: Senior

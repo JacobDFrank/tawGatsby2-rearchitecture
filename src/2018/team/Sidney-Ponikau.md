@@ -1,5 +1,5 @@
 ---
-title: Sidney Ponikau
+name: Sidney Ponikau
 headshot: images/uploads/Sidney_Ponikau.jpg
 role: Lounge
 year: Junior

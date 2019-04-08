@@ -1,5 +1,5 @@
 ---
-title: Gan Lin
+name: Gan Lin
 headshot: images/uploads/Gan_Lin.jpg
 role: Badges & Graphics
 year: Junior

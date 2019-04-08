@@ -1,5 +1,5 @@
 ---
-title: Ben Mendelsohn
+name: Ben Mendelsohn
 headshot: images/uploads/Ben_Mendelsohn.jpg
 role: Web Design & Style Guide
 year: Sophomore

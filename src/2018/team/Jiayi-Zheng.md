@@ -1,5 +1,5 @@
 ---
-title: Jiayi Zheng
+name: Jiayi Zheng
 headshot: images/uploads/Jiayi_Zheng.jpg
 role: Graphics
 year: Junior

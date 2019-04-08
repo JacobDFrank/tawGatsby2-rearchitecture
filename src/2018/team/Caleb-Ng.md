@@ -1,5 +1,5 @@
 ---
-title: Caleb Ng
+name: Caleb Ng
 headshot: images/uploads/Caleb_Ng.jpg
 role: Brand & Visual Design
 year: Sophomore

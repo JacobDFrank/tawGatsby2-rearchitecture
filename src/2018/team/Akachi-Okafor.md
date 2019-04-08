@@ -1,5 +1,5 @@
 ---
-title: Akachi Okafor
+name: Akachi Okafor
 headshot: images/uploads/Akachi_Okafor.jpg
 role: Swag
 year: Junior

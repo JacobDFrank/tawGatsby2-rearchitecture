@@ -20,9 +20,9 @@ export default class Team extends Component {
                 <React.Fragment>
                   {
                     someEntries.edges.map(person => (
-                      <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.title}>
+                      <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
                         <AboutCards
-                          title={person.node.frontmatter.title}
+                          name={person.node.frontmatter.name}
                           headshot={person.node.frontmatter.headshot}
                           role={person.node.frontmatter.role}
                           year={person.node.frontmatter.year}
@@ -34,9 +34,9 @@ export default class Team extends Component {
                   }
                   {
                     someMoreEntries.edges.map(person => (
-                      <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.title}>
+                      <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
                         <AboutCards
-                          title={person.node.frontmatter.title}
+                          name={person.node.frontmatter.name}
                           headshot={person.node.frontmatter.headshot}
                           role={person.node.frontmatter.role}
                           year={person.node.frontmatter.year}
@@ -62,7 +62,7 @@ const TEAM_2018_QUERY = graphql`
     edges {
       node {
         frontmatter {
-          title
+          name
           headshot
           role
           major
@@ -77,7 +77,7 @@ const TEAM_2018_QUERY = graphql`
     edges {
       node {
         frontmatter {
-          title
+          name
           headshot
           role
           major

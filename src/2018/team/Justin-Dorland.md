@@ -1,5 +1,5 @@
 ---
-title: Justin Dorland
+name: Justin Dorland
 headshot: images/uploads/Justin_Dorland.jpg
 role: Black Ops
 year: Senior

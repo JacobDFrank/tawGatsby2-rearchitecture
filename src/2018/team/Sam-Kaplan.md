@@ -1,5 +1,5 @@
 ---
-title: Sam Kaplan
+name: Sam Kaplan
 headshot: images/uploads/Sam_Kaplan.jpg
 role: Budget
 year: Junior

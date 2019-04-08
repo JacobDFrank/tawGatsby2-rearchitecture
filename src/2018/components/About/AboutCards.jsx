@@ -27,7 +27,7 @@ export default class SpeakerCard extends Component {
           <div
             className={classnames(styles.speakerCard_text)}>
             <h2 className={classnames(styles.speakerCard_text__spacing)}>
-              {props.title}
+              {props.name}
             </h2>
             <p className={classnames(styles.aboutTeam__spacing)}><strong>{props.role}</strong></p>
             <p className={classnames(styles.aboutMajorYear__spacing)}>{props.major + ' - ' + props.year}</p>

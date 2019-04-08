@@ -1,5 +1,5 @@
 ---
-title: Frank Barletta
+name: Frank Barletta
 headshot: images/uploads/Frank_Barletta.jpg
 role: TAW Co-coordinator, Finance and Logistics Lead
 year: Senior

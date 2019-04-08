@@ -1,5 +1,5 @@
 ---
-title: Christine Van
+name: Christine Van
 headshot: images/uploads/Christine_Van.jpg
 role: Graphics
 year: Junior

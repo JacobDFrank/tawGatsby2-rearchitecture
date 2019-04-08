@@ -50,7 +50,7 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Team Member Name', name: 'title', widget: 'string' }
+      - { label: 'Team Member Name', name: 'name', widget: 'string' }
       - {label: 'Headshot', name: 'headshot', widget: 'image'}
       - { label: 'TAW Role/Team', name: 'role', widget: 'string', required: true, hint: 'What your role within TAW is or what you worked on. Ex: Signage, Badges, Graphics, Big @ Sign', pattern: ['^.{1,80}$', 'Must have no more than 80 characters']}
       - { label: 'Major/Concentrations', name: 'major', widget: 'string', required: true, hint: 'Ex: Design/Mechanical Engineering or Industrial Design', pattern: ['^.{1,40}$', 'Must have no more than 40 characters']}

@@ -1,5 +1,5 @@
 ---
-title: Rohan Pawar
+name: Rohan Pawar
 headshot: images/uploads/Rohan_Pawar.jpg
 role: Graphics / Title Sequence
 year: Junior

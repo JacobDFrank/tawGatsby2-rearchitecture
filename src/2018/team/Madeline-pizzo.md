@@ -1,5 +1,5 @@
 ---
-title: Madeline Pizzo
+name: Madeline Pizzo
 headshot: images/uploads/Madeline_Pizzo.jpg
 role: Big @ Sign
 year: Junior
