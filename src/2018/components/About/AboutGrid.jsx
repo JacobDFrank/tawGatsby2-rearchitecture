@@ -58,11 +58,11 @@ export default class Team extends Component {
 
 const TEAM_2018_QUERY = graphql`
   query team2018 {
-  someEntries:allMarkdownRemark(filter: {frontmatter: {lead: {eq: true}, fileAbsolutePath: {regex: "/2018/team/"}}) {
+  someEntries:allMarkdownRemark(filter: {frontmatter: {lead: {ne: false}}, fileAbsolutePath: {regex: "/2018/team/"}}) {
     edges {
       node {
         frontmatter {
-          name
+          title
           headshot
           role
           major
@@ -73,11 +73,11 @@ const TEAM_2018_QUERY = graphql`
       }
     }
   }
-  someMoreEntries: allMarkdownRemark(filter: {frontmatter: {lead: {eq: false}}}, fileAbsolutePath: {regex: "/2018/team/"}}) {
+  someMoreEntries: allMarkdownRemark(filter: {frontmatter: {lead: {ne: true}}, fileAbsolutePath: {regex: "/2018/team/"}}) {
     edges {
       node {
         frontmatter {
-          name
+          title
           headshot
           role
           major
@@ -89,4 +89,5 @@ const TEAM_2018_QUERY = graphql`
     }
   }
 }
+
 `;
