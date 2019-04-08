@@ -1,37 +1,58 @@
 import React, { Component } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import AboutCards from './AboutCards.jsx';
 import classnames from 'classnames';
 import styles from '../../styles/components/about/aboutGrid.module.scss';
 
-export default class AboutGrid extends Component {
-  createPerson = (person) => {
-    return (
-      <div className={classnames(styles.speakerSizing)} key={person.name}>
-        <AboutCards name={person.name} team={person.team} year={person.year} major={person.major} link={person.link} />
-      </div>
-    );
-  };
 
-  createPeople = (people) => {
-    return people.map(this.createPerson);
-  };
-
+export default class Team extends Component {
   render() {
-    var aboutKids = this.props.aboutKids;
-    var aboutLeads = this.props.aboutLeads;
-
     return (
-      
-      <div>
+      <React.Fragment>
         <h3 className={classnames(
           'container gridish-container gridish-container--complete', styles.coolKids)}>The cool kids</h3>
-
-        <div className={classnames('container flex gridish-container gridish-container--complete gridish-grid', styles.flexibleGrid)}>
-          {this.createPeople(aboutLeads)}
-          {this.createPeople(aboutKids)}
-        </div>
-      </div>
+        <StaticQuery
+          query={TEAM_2018_QUERY}
+          render={({ allMarkdownRemark }) =>
+            (
+              <div className={classnames('container flex gridish-container gridish-container--complete gridish-grid', styles.flexibleGrid)}>
+                {
+                  allMarkdownRemark.edges.map(person => (
+                    <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.title}>
+                      <AboutCards
+                        title={person.node.frontmatter.title}
+                        headshot={person.node.frontmatter.headshot}
+                        role={person.node.frontmatter.role}
+                        year={person.node.frontmatter.year}
+                        major={person.node.frontmatter.major}
+                        webpage={person.node.frontmatter.webpage}
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            )
+          }
+        />
+      </React.Fragment>
     );
   }
 }
 
+const TEAM_2018_QUERY = graphql`
+  query team2018 {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/2018/team/" } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            headshot
+            role
+            major
+            year
+            webpage
+          }
+        }
+      }
+    }
+  }`;

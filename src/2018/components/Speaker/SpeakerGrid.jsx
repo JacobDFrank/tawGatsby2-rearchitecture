@@ -23,7 +23,7 @@ export default class Speaker extends Component {
                           job={speaker.node.frontmatter.job}
                           bio={speaker.node.frontmatter.bio}
                           webpage={speaker.node.frontmatter.webpage}
-                          headshot={ speaker.node.frontmatter.headshot}
+                          headshot={speaker.node.frontmatter.headshot}
                         />
                       </div>
                     ))
