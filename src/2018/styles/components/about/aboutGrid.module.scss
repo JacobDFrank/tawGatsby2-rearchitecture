@@ -34,6 +34,7 @@
 }
 
 :local(.coolKids) {
+    overflow: hidden;
     margin-bottom: 80px;
 
     @include media('<md') {
