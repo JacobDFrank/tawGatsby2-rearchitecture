@@ -5,4 +5,5 @@ role: Outreach
 year: Senior
 major: Product Design
 webpage: https://dishant-ux.com
+lead: false
 ---

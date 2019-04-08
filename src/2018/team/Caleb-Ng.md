@@ -5,4 +5,5 @@ role: Brand & Visual Design
 year: Sophomore
 major: New Media Design
 webpage: https://www.letscalebrate.com/
+lead: false
 ---

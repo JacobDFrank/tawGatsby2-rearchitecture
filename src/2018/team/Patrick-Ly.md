@@ -5,4 +5,5 @@ role: Web Development
 major: Computer Science
 year: Junior
 webpage: https://www.patricktly.com/
+lead: false
 ---

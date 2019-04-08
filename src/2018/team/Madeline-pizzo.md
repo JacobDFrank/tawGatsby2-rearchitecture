@@ -5,4 +5,5 @@ role: Big @ Sign
 year: Junior
 major: Industrial Design
 webpage: https://www.instagram.com/madrosedesign/
+lead: false
 ---

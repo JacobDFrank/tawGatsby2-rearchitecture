@@ -11,29 +11,31 @@ export default class Team extends Component {
       <React.Fragment>
         <h3 className={classnames(
           'container gridish-container gridish-container--complete', styles.coolKids)}>The cool kids</h3>
-        <StaticQuery
-          query={TEAM_2018_QUERY}
-          render={({ allMarkdownRemark }) =>
-            (
-              <div className={classnames('container flex gridish-container gridish-container--complete gridish-grid', styles.flexibleGrid)}>
-                {
-                  allMarkdownRemark.edges.map(person => (
-                    <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.title}>
-                      <AboutCards
-                        title={person.node.frontmatter.title}
-                        headshot={person.node.frontmatter.headshot}
-                        role={person.node.frontmatter.role}
-                        year={person.node.frontmatter.year}
-                        major={person.node.frontmatter.major}
-                        webpage={person.node.frontmatter.webpage}
-                      />
-                    </div>
-                  ))
-                }
-              </div>
-            )
-          }
-        />
+        <div className={classnames('container flex gridish-container gridish-container--complete gridish-grid', styles.flexibleGrid)}>
+          <StaticQuery
+            query={TEAM_2018_QUERY}
+            render={({ allMarkdownRemark }) =>
+              (
+                <React.Fragment>
+                  {
+                    allMarkdownRemark.edges.map(person => (
+                      <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.title}>
+                        <AboutCards
+                          title={person.node.frontmatter.title}
+                          headshot={person.node.frontmatter.headshot}
+                          role={person.node.frontmatter.role}
+                          year={person.node.frontmatter.year}
+                          major={person.node.frontmatter.major}
+                          webpage={person.node.frontmatter.webpage}
+                        />
+                      </div>
+                    ))
+                  }
+                </React.Fragment>
+              )
+            }
+          />
+        </div>
       </React.Fragment>
     );
   }

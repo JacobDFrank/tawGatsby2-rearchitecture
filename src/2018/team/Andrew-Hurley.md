@@ -5,4 +5,5 @@ role: Web Design
 year: Junior
 major: New Media Design
 webpage: http://hurleyandrew.com
+lead: false
 ---

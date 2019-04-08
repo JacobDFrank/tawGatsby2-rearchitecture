@@ -5,4 +5,5 @@ role: Signage
 year: Senior
 major: Industrial Design & Illustration
 webpage: https://lydiakrogh.myportfolio.com
+lead: false
 ---

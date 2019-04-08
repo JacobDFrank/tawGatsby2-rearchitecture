@@ -5,4 +5,5 @@ role: Black Ops
 year: Senior
 major: Industrial Design/Mechanical Engineering
 webpage: https://www.justindorland.com/
+lead: false
 ---

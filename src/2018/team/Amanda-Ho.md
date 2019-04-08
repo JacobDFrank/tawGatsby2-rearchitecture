@@ -5,4 +5,5 @@ role: Title Sequence Lead
 year: Senior
 major: New Media Design
 webpage: http://amanda-ho.com
+lead: false
 ---
