@@ -56,7 +56,7 @@ export default class Team extends Component {
                     ))
                   }
                   {
-                    someMoreEntries.edges.map(person => (
+                    this.shuffleArray(someMoreEntries.edges).map(person => (
                       <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
                         <AboutCards
                           name={person.node.frontmatter.name}
