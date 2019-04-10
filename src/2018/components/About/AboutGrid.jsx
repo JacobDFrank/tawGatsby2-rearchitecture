@@ -6,6 +6,29 @@ import styles from '../../styles/components/about/aboutGrid.module.scss';
 
 
 export default class Team extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      limit: 2,
+      count: 0
+    };
+  }
+
+
+  shuffleArray = (array) => {
+    let i = array.length - 1;
+    if (this.state.count != this.state.limit) {
+      for (; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+    return array;
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -19,7 +42,7 @@ export default class Team extends Component {
               (
                 <React.Fragment>
                   {
-                    someEntries.edges.map(person => (
+                    this.shuffleArray(someEntries.edges).map(person => (
                       <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
                         <AboutCards
                           name={person.node.frontmatter.name}
@@ -62,7 +85,7 @@ const TEAM_2018_QUERY = graphql`
     edges {
       node {
         frontmatter {
-          title
+          name
           headshot
           role
           major
@@ -77,7 +100,7 @@ const TEAM_2018_QUERY = graphql`
     edges {
       node {
         frontmatter {
-          title
+          name
           headshot
           role
           major
