@@ -69,9 +69,4 @@ collections:
       - { label: 'Website/Company Link', name: 'webpage', widget: 'string', required: false, hint: 'Ex: https://laurenoneilldesign.com/ or http://localprojects.com'}
       - {label: 'Headshot', name: 'headshot', widget: 'image'}
       - { label: 'Bio', name: 'bio', widget: 'string', pattern: ['^.{1,1600}$', 'Must have no more than 1,600 characters... This should not be hard']}
-      - label: 'Talks'
-        name: 'talks'
-        widget: 'list'
-        required: false
-        fields:
-          - {label: 'Talk(Team test)', name: 'talk', widget: 'relation', collection: 'team2018', searchFields: ['name'], valueField: ['name'], displayFields: ['name', 'year']}
+      - {label: 'Talk(Team test)', name: 'talk', widget: 'relation', collection: 'team2018', searchFields: ['name'], valueField: ['name'], displayFields: ['name', 'year']}
