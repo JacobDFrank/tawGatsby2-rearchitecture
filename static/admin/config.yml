@@ -74,4 +74,4 @@ collections:
         widget: 'list'
         required: false
         fields:
-          - {label: 'Talk(Team test)', name: 'talk', widget: 'relation', collection: 'team', searchFields: ['title'], valueField: ['title'], displayFields: ['title', 'bio']}
+          - {label: 'Talk(Team test)', name: 'talk', widget: 'relation', collection: 'team2018', searchFields: ['name'], valueField: ['name'], displayFields: ['name', 'year']}
