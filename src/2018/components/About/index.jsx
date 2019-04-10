@@ -1,32 +1,9 @@
 import React from 'react';
 import Header from '../Header/index';
 import AboutGrid from './AboutGrid';
-import data from '../../assets/about.json';
 import classnames from 'classnames';
 
 class About extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      limit: 2,
-      count: 0
-    };
-  }
-
-
-  shuffleArray = (array) => {
-    let i = array.length - 1;
-    if (this.state.count != this.state.limit) {
-      for (; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-    }
-    return array;
-  }
 
   render() {
     return (
@@ -44,7 +21,7 @@ class About extends React.Component {
           </p>
         </div>
         <div className={'content-Block--margin-top'}>
-          <AboutGrid aboutKids={data.aboutKids} aboutLeads={data.aboutLeads} />
+          <AboutGrid/>
         </div>
       </div>
     );
