@@ -4,21 +4,41 @@ import AboutCards from './AboutCards.jsx';
 import classnames from 'classnames';
 import styles from '../../styles/components/about/aboutGrid.module.scss';
 
-
 export default class Team extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      limit: 2,
-      count: 0
+      end: true,
+      used: -1,
+      randomOrderLead: [],
     };
   }
 
 
+
+  randomArray = (length, max) => [...new Array(length)].map(() => Math.round(Math.random() * max));
+
+  generateRan = (max) => {
+    let random = [];
+    let used = this.state.used;
+    if (this.state.end) {
+      for (let i = 0; i < max; i++) {
+        let temp = Math.floor(Math.random() * max + 1);
+        if (random.indexOf(temp) == -1) {
+          random.push(temp);
+        }
+        else i--;
+      }
+      this.setState({ end: false, randomOrderLead: random });
+    }
+    used++;
+    return this.state.randomOrderLead[used];
+  }
+
   shuffleArray = (array) => {
     let i = array.length - 1;
-    if (this.state.count != this.state.limit) {
+    if (this.state.count != this.state.end) {
       for (; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = array[i];
@@ -42,7 +62,7 @@ export default class Team extends Component {
               (
                 <React.Fragment>
                   {
-                    this.shuffleArray(someEntries.edges).map(person => (
+                    someEntries.edges.map(person => (
                       <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
                         <AboutCards
                           name={person.node.frontmatter.name}
@@ -51,6 +71,9 @@ export default class Team extends Component {
                           year={person.node.frontmatter.year}
                           major={person.node.frontmatter.major}
                           webpage={person.node.frontmatter.webpage}
+                          // order={
+                          //   this.generateRan(someEntries.edges.length)
+                          // }
                         />
                       </div>
                     ))

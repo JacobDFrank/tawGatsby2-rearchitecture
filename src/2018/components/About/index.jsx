@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header/index';
 import AboutGrid from './AboutGrid';
+import data from '../../assets/about.json';
 import classnames from 'classnames';
 
 class About extends React.Component {
@@ -21,7 +22,7 @@ class About extends React.Component {
           </p>
         </div>
         <div className={'content-Block--margin-top'}>
-          <AboutGrid/>
+          <AboutGrid aboutKids={data.aboutKids} aboutLeads={data.aboutLeads} />
         </div>
       </div>
     );
