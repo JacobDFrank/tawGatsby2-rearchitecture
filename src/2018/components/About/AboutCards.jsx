@@ -8,6 +8,7 @@ export default class SpeakerCard extends Component {
     super(props);
 
     this.state = {
+      headshot: this.props.headshot
     };
   }
 
@@ -19,7 +20,7 @@ export default class SpeakerCard extends Component {
         <div
           className={classnames(styles.cardSize)}
         >
-          <div style={{ backgroundImage: `url(${'../../' + props.headshot})` }} className={classnames(styles.headshotContainer)}>
+          <div style={{ backgroundImage: `url(${'../../' + this.state.headshot})` }} className={classnames(styles.headshotContainer)}>
           </div>
           <p>{props.headshot}</p>
           <div
