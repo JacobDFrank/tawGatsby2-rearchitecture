@@ -1,17 +1,13 @@
 ---
-name: event opening and title
 day: Friday
-location: 'Webb Auditorium, Booth 1350'
-type: General
 start: '2:00PM'
 end: '2:15PM'
+name: Event Opening and Title
 speakers:
   - speaker:
-      - Amelia Fontanel
-      - Chelsea Klukas
-  - speaker:
-      - Ben Sorensen
+      - TAW team
+location: Webb Auditorium, Booth 1350
+type: General
 description: >-
-  Get the inside scoop of what to expect for the weekend and see the Title
-  Sequence for this year's event.
+  Get the inside scoop of what to expect for the weekend and see the Title Sequence for this year's event.
 ---
