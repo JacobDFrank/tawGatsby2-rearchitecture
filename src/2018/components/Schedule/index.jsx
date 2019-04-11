@@ -23,7 +23,6 @@ export default class Schedule extends Component {
 
 
   isFriday = (isVisible) => {
-    console.log('isFriday');
     if (isVisible) {
       this.setState({ friday: true });
       this.setState({ day: 'Friday' });
@@ -38,7 +37,6 @@ export default class Schedule extends Component {
 
 
   isSaturday = (isVisible) => {
-    console.log('isSaturday');
     if (isVisible) {
       this.setState({ saturday: true });
       this.setState({ day: 'Saturday' });
@@ -55,7 +53,6 @@ export default class Schedule extends Component {
   }
 
   isSunday = (isVisible) => {
-    console.log('isSunday');
     if (isVisible) {
       this.setState({ sunday: true });
       this.setState({ day: 'Sunday' });
@@ -282,7 +279,7 @@ export default class Schedule extends Component {
 
 const SCHEDULE_2018_QUERY = graphql`
 query schedule2018 {
-  someEntries: allMarkdownRemark(filter: { frontmatter: { day: { eq: "Friday" } }, fileAbsolutePath: { regex: "/2018/schedule/" } }, sort: { order: ASC, fields: [frontmatter___start] }) {
+  someEntries: allMarkdownRemark(filter: {frontmatter: {day: {eq: "Friday"}}, fileAbsolutePath: {regex: "/2018/schedule/"}}, sort: {order: ASC, fields: [frontmatter___start]}) {
     edges {
       node {
         frontmatter {
@@ -293,11 +290,14 @@ query schedule2018 {
           start
           end
           description
+          speakers{
+            speaker
+          }
         }
       }
     }
   }
-  someMoreEntries: allMarkdownRemark(filter: { frontmatter: { day: { eq: "Saturday" } }, fileAbsolutePath: { regex: "/2018/schedule/" } }, sort: { order: ASC, fields: [frontmatter___start] }) {
+  someMoreEntries: allMarkdownRemark(filter: {frontmatter: {day: {eq: "Saturday"}}, fileAbsolutePath: {regex: "/2018/schedule/"}}, sort: {order: ASC, fields: [frontmatter___start]}) {
     edges {
       node {
         frontmatter {
@@ -308,11 +308,14 @@ query schedule2018 {
           start
           end
           description
+          speakers{
+            speaker
+          }
         }
       }
     }
   }
-  someMoreMoreEntries: allMarkdownRemark(filter: { frontmatter: { day: { eq: "Sunday" } }, fileAbsolutePath: { regex: "/2018/schedule/" } }, sort: { order: ASC, fields: [frontmatter___start] }) {
+  someMoreMoreEntries: allMarkdownRemark(filter: {frontmatter: {day: {eq: "Sunday"}}, fileAbsolutePath: {regex: "/2018/schedule/"}}, sort: {order: ASC, fields: [frontmatter___start]}) {
     edges {
       node {
         frontmatter {
@@ -323,6 +326,9 @@ query schedule2018 {
           start
           end
           description
+          speakers{
+            speaker
+          }
         }
       }
     }

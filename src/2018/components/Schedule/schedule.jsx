@@ -41,10 +41,10 @@ class Schedule extends React.Component {
     let start = this.props.start.toLowerCase();
     let end = this.props.end.toLowerCase();
     let name = this.props.name;
-    let presenterLocation = this.props.location;
+    let location = this.props.location;
+    let speakers = this.props.speakers[0].speaker.join(', ');
     let type = this.props.type;
     let description = this.props.description;
-    // let day = this.props.day;
 
     let eventOpen = this.state.eventOpen ? 'block' : 'none';
     let chevron = this.state.eventOpen ? scheduleChevronClosed : scheduleChevron;
@@ -54,7 +54,7 @@ class Schedule extends React.Component {
       <div className={styles.schedule_block}
         onClick={this.onClick}
       >
-        {/* <div
+        <div
           style={{ backgroundColor: this.eventTypeClassName(type).baseColor, borderColor: this.eventTypeClassName(type).borderColor }}
           className={classnames(styles.schedule_block__duration, 'flex flex-align-center flex-row flex-justify-between')}
         >
@@ -67,7 +67,7 @@ class Schedule extends React.Component {
             className={classnames(styles.event_header__type, styles.event_type)}>
             {type}
           </p>
-        </div> */}
+        </div>
         <div
           className={classnames(styles.schedule_block__content)}
 
@@ -75,19 +75,19 @@ class Schedule extends React.Component {
           <div className={classnames(styles.event_spacing)}>
             <div className={classnames('flex flex-justify-between')}
             >
-              <h3>{name + type}</h3>
+              <h3>{name}</h3>
               <img
                 src={chevron}
               />
             </div>
-            <p className={styles.presenterLocation}>{presenterLocation}</p>
+            <p className={styles.location}>{speakers + ' - ' + location}</p>
             <div className={classnames(styles.event_description)} style={{ display: eventOpen }}>
               <p className={classnames(styles.event_description__color)}>
-                {/* <span
+                <span
                   style={{ color: this.eventTypeClassName(type).typeAboutColor, fontWeight: 'bold' }}
                 >
-                  {type}:
-                </span> */}
+                  {type + ': '}
+                </span>
                 {description}
               </p>
             </div>
