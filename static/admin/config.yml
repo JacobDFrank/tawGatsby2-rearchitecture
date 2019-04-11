@@ -99,5 +99,5 @@ collections:
         required: true
         fields:
           - {label: 'Speaker', name: 'speaker', widget: 'relation', required: false, collection: 'speakers2018', searchFields: ['name'], valueField: 'name', displayFields: ['name'], multiple: true, default: 'TAW Team', hint: 'Not picking a speaker will default to TAW Team'}
-          - { label: 'Speaker not in relation', name: 'other-speaker', widget: 'string', hint: 'Only to be used when speaker not in lineup. EX: Surprise Speaker Linup', required: false, pattern: ['^.{1,40}$', 'Must have no more than 40 characters']}
+          - { label: 'Speaker not in relation', name: 'other-speaker', widget: 'string', hint: 'Only to be used when speaker not in lineup. EX: Surprise Speaker Lineup', required: false, pattern: ['^.{1,40}$', 'Must have no more than 40 characters']}
       - { label: 'Description', name: 'description', widget: 'string', pattern: ['^.{1,1200}$', 'Must have no more than 1200 characters']}

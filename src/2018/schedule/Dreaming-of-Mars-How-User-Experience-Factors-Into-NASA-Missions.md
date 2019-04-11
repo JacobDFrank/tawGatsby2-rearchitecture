@@ -2,7 +2,7 @@
 day: Friday
 start: '2:15PM'
 end: '3:00PM'
-name: Dreaming of Mars: How User Experience Factors Into NASA Missions
+name: 'Dreaming of Mars: How User Experience Factors Into NASA Missions'
 speakers:
   - speaker:
     - Krys Blackwood

@@ -5,7 +5,7 @@ end: '2:15PM'
 name: Event Opening and Title
 speakers:
   - speaker:
-      - TAW team
+    - TAW Team
 location: Webb Auditorium, Booth 1350
 type: General
 description: >-

@@ -7,7 +7,7 @@ location: Booth 3310
 speakers:
   - speaker:
     - TAW Team
-type: Genera
+type: General
 description: >-
   A final review of the 2018 conference.
 ---

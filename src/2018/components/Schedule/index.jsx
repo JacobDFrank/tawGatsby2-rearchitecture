@@ -1,7 +1,7 @@
-import React from 'react';
-import Scheduled from './schedule.jsx';
+import React, { Component } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import ScheduleEntry from './schedule.jsx';
 import classnames from 'classnames';
-import data from '../../assets/schedule.json';
 import Header from '../Header/index';
 import styles from '../../styles/components/schedule/scheduleButtons.module.scss';
 import MediaQuery from 'react-responsive';
@@ -10,7 +10,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 
-class Schedule extends React.Component {
+export default class Schedule extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,27 +21,6 @@ class Schedule extends React.Component {
     };
   }
 
-  initializeSchedule = (events, day) => {
-    return (
-      <div>
-        {events.map((event) => {
-          return (
-            <div key={event.title + event.end}>
-              <Scheduled
-                day={day}
-                title={event.title}
-                start={event.start}
-                end={event.end}
-                presenterLocation={event.presenter_location}
-                type={event.type}
-                description={event.description}
-              />
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
 
   isFriday = (isVisible) => {
     console.log('isFriday');
@@ -186,7 +165,31 @@ class Schedule extends React.Component {
                     <h2 className={styles.day}>friday</h2>
                   </div>
                 </ScrollableAnchor>
-                {this.initializeSchedule(data.friday, 'friday')}
+                <StaticQuery
+                  query={SCHEDULE_2018_QUERY}
+                  render={({ someEntries }) =>
+                    (
+                      <React.Fragment>
+                        {
+                          someEntries.edges.map(event => (
+                            <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
+                              <ScheduleEntry
+                                day={event.node.frontmatter.day}
+                                name={event.node.frontmatter.name}
+                                start={event.node.frontmatter.start}
+                                end={event.node.frontmatter.end}
+                                location={event.node.frontmatter.location}
+                                speakers={event.node.frontmatter.speakers}
+                                type={event.node.frontmatter.type}
+                                description={event.node.frontmatter.description}
+                              />
+                            </div>
+                          ))
+                        }
+                      </React.Fragment>
+                    )
+                  }
+                />
               </div>
             </VisibilitySensor>
 
@@ -202,7 +205,31 @@ class Schedule extends React.Component {
                     <h2 className={styles.day}>saturday</h2>
                   </div>
                 </ScrollableAnchor>
-                {this.initializeSchedule(data.saturday, 'saturday')}
+                <StaticQuery
+                  query={SCHEDULE_2018_QUERY}
+                  render={({ someMoreEntries }) =>
+                    (
+                      <React.Fragment>
+                        {
+                          someMoreEntries.edges.map(event => (
+                            <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
+                              <ScheduleEntry
+                                day={event.node.frontmatter.day}
+                                name={event.node.frontmatter.name}
+                                start={event.node.frontmatter.start}
+                                end={event.node.frontmatter.end}
+                                location={event.node.frontmatter.location}
+                                speakers={event.node.frontmatter.speakers}
+                                type={event.node.frontmatter.type}
+                                description={event.node.frontmatter.description}
+                              />
+                            </div>
+                          ))
+                        }
+                      </React.Fragment>
+                    )
+                  }
+                />
               </div>
             </VisibilitySensor>
 
@@ -218,7 +245,31 @@ class Schedule extends React.Component {
                     <h2 className={styles.day}>sunday</h2>
                   </div>
                 </ScrollableAnchor>
-                {this.initializeSchedule(data.sunday, 'sunday')}
+                <StaticQuery
+                  query={SCHEDULE_2018_QUERY}
+                  render={({ someMoreMoreEntries }) =>
+                    (
+                      <React.Fragment>
+                        {
+                          someMoreMoreEntries.edges.map(event => (
+                            <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
+                              <ScheduleEntry
+                                day={event.node.frontmatter.day}
+                                name={event.node.frontmatter.name}
+                                start={event.node.frontmatter.start}
+                                end={event.node.frontmatter.end}
+                                location={event.node.frontmatter.location}
+                                speakers={event.node.frontmatter.speakers}
+                                type={event.node.frontmatter.type}
+                                description={event.node.frontmatter.description}
+                              />
+                            </div>
+                          ))
+                        }
+                      </React.Fragment>
+                    )
+                  }
+                />
               </div>
             </VisibilitySensor>
 
@@ -229,4 +280,51 @@ class Schedule extends React.Component {
   }
 }
 
-export default Schedule;
+const SCHEDULE_2018_QUERY = graphql`
+query schedule2018 {
+  someEntries: allMarkdownRemark(filter: { frontmatter: { day: { eq: "Friday" } }, fileAbsolutePath: { regex: "/2018/schedule/" } }, sort: { order: ASC, fields: [frontmatter___start] }) {
+    edges {
+      node {
+        frontmatter {
+          name
+          day
+          location
+          type
+          start
+          end
+          description
+        }
+      }
+    }
+  }
+  someMoreEntries: allMarkdownRemark(filter: { frontmatter: { day: { eq: "Saturday" } }, fileAbsolutePath: { regex: "/2018/schedule/" } }, sort: { order: ASC, fields: [frontmatter___start] }) {
+    edges {
+      node {
+        frontmatter {
+          name
+          day
+          location
+          type
+          start
+          end
+          description
+        }
+      }
+    }
+  }
+  someMoreMoreEntries: allMarkdownRemark(filter: { frontmatter: { day: { eq: "Sunday" } }, fileAbsolutePath: { regex: "/2018/schedule/" } }, sort: { order: ASC, fields: [frontmatter___start] }) {
+    edges {
+      node {
+        frontmatter {
+          name
+          day
+          location
+          type
+          start
+          end
+          description
+        }
+      }
+    }
+  }
+}`;

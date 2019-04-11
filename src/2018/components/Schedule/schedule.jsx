@@ -21,13 +21,13 @@ class Schedule extends React.Component {
     // const prefix = 'event_type-';
     switch (type) {
       case 'General':
-        return { baseColor: '#f4f4f4', foreColor: '#281E35', borderColor: '#e5e5e5', typeAboutColor: '#281E35'};
+        return { baseColor: '#f4f4f4', foreColor: '#281E35', borderColor: '#e5e5e5', typeAboutColor: '#281E35' };
       case 'Lecture':
-        return { baseColor: '#FF2350', foreColor: '#fff', typeAboutColor: '#FF2350'};
+        return { baseColor: '#FF2350', foreColor: '#fff', typeAboutColor: '#FF2350' };
       case 'Keynote':
-        return { baseColor: '#F2C227', foreColor: '#281E35', typeAboutColor: '#F2C227'};
+        return { baseColor: '#F2C227', foreColor: '#281E35', typeAboutColor: '#F2C227' };
       case 'Workshop':
-        return { baseColor: '#2071FF', foreColor: '#fff', typeAboutColor: '#2071FF'};
+        return { baseColor: '#2071FF', foreColor: '#fff', typeAboutColor: '#2071FF' };
       default:
         return null;
     }
@@ -40,8 +40,8 @@ class Schedule extends React.Component {
   render() {
     let start = this.props.start.toLowerCase();
     let end = this.props.end.toLowerCase();
-    let title = this.props.title;
-    let presenterLocation = this.props.presenterLocation;
+    let name = this.props.name;
+    let presenterLocation = this.props.location;
     let type = this.props.type;
     let description = this.props.description;
     // let day = this.props.day;
@@ -54,14 +54,20 @@ class Schedule extends React.Component {
       <div className={styles.schedule_block}
         onClick={this.onClick}
       >
-        <div
-          style={{ backgroundColor: this.eventTypeClassName(type).baseColor, borderColor: this.eventTypeClassName(type).borderColor  }}
-          className={classnames(styles.schedule_block__duration, 'flex flex-align-center flex-row flex-justify-between')}>
-          <p style={{ color: this.eventTypeClassName(type).foreColor }} className={classnames(styles.duration, styles.event_header__type)}>{start} to {end}</p>
-          <p style={{ color: this.eventTypeClassName(type).foreColor }} className={classnames(styles.event_header__type, styles.event_type)}>
+        {/* <div
+          style={{ backgroundColor: this.eventTypeClassName(type).baseColor, borderColor: this.eventTypeClassName(type).borderColor }}
+          className={classnames(styles.schedule_block__duration, 'flex flex-align-center flex-row flex-justify-between')}
+        >
+          <p
+            style={{ color: this.eventTypeClassName(type).foreColor }}
+            className={classnames(styles.duration, styles.event_header__type)}>{start} to {end}
+          </p>
+          <p
+            style={{ color: this.eventTypeClassName(type).foreColor }}
+            className={classnames(styles.event_header__type, styles.event_type)}>
             {type}
           </p>
-        </div>
+        </div> */}
         <div
           className={classnames(styles.schedule_block__content)}
 
@@ -69,7 +75,7 @@ class Schedule extends React.Component {
           <div className={classnames(styles.event_spacing)}>
             <div className={classnames('flex flex-justify-between')}
             >
-              <h3>{title}</h3>
+              <h3>{name + type}</h3>
               <img
                 src={chevron}
               />
@@ -77,9 +83,13 @@ class Schedule extends React.Component {
             <p className={styles.presenterLocation}>{presenterLocation}</p>
             <div className={classnames(styles.event_description)} style={{ display: eventOpen }}>
               <p className={classnames(styles.event_description__color)}>
-                <span
+                {/* <span
                   style={{ color: this.eventTypeClassName(type).typeAboutColor, fontWeight: 'bold' }}
-                >{type}:</span> {description}</p>
+                >
+                  {type}:
+                </span> */}
+                {description}
+              </p>
             </div>
           </div>
         </div>
