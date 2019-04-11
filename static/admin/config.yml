@@ -86,8 +86,8 @@ collections:
       - { label: "Day", name: "day", widget: "select", required: true, options: ["Friday", "Saturday", "Sunday"] }
       - { label: 'Location', name: 'location', widget: 'string', pattern: ['^.{1,40}$', 'Must have no more than 40 characters']}
       - { label: "Event Type", name: "type", widget: "select", required: true, options: ["General", "Workshop", "Keynote", "Lecture"] }
-      - { label: 'Start Time', name: 'start', widget: 'datetime', required: true, format: 'LT'}
-      - { label: 'End Time', name: 'end', widget: 'datetime', required: true, format: 'LT'}
+      - { label: 'Start Time', name: 'start', widget: 'datetime', required: true, dateFormat: false, format: 'LT'}
+      - { label: 'End Time', name: 'end', widget: 'datetime', required: true, dateFormat: false, format: 'LT'}
       - label: 'Speaker(s)'
         name: 'speakers'
         widget: 'list'
