@@ -150,23 +150,23 @@ export default class Schedule extends Component {
 
 
           <div className={classnames('gridish-container--complete content-Block--margin-top')}>
+            <StaticQuery
+              query={SCHEDULE_2018_QUERY}
+              render={({ someEntries, someMoreEntries, someMoreMoreEntries }) =>
 
-            <VisibilitySensor
-              onChange={this.isFriday}
-              partialVisibility={true}
-              offset={{ top: 120 }}
-            >
-              <div>
-                <ScrollableAnchor id={'friday'}>
-                  <div className={classnames('flex flex-row flex-justify-between flex-align-center', styles.date_header)}>
-                    <h2 className={styles.day}>friday</h2>
-                  </div>
-                </ScrollableAnchor>
-                <StaticQuery
-                  query={SCHEDULE_2018_QUERY}
-                  render={({ someEntries }) =>
-                    (
-                      <React.Fragment>
+                (
+                  <React.Fragment>
+                    <VisibilitySensor
+                      onChange={this.isFriday}
+                      partialVisibility={true}
+                      offset={{ top: 120 }}
+                    >
+                      <div>
+                        <ScrollableAnchor id={'friday'}>
+                          <div className={classnames('flex flex-row flex-justify-between flex-align-center', styles.date_header)}>
+                            <h2 className={styles.day}>friday</h2>
+                          </div>
+                        </ScrollableAnchor>
                         {
                           someEntries.edges.map(event => (
                             <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
@@ -183,30 +183,26 @@ export default class Schedule extends Component {
                             </div>
                           ))
                         }
-                      </React.Fragment>
-                    )
-                  }
-                />
-              </div>
-            </VisibilitySensor>
+
+                        )
+                      }
+                    />
+                    </div>
+                    </VisibilitySensor>
 
 
-            <VisibilitySensor
-              onChange={this.isSaturday}
-              partialVisibility={true}
-              offset={{ top: 120 }}
-            >
-              <div>
-                <ScrollableAnchor id={'saturday'}>
-                  <div className={classnames('flex flex-row flex-justify-between flex-align-center', styles.date_header)}>
-                    <h2 className={styles.day}>saturday</h2>
-                  </div>
-                </ScrollableAnchor>
-                <StaticQuery
-                  query={SCHEDULE_2018_QUERY}
-                  render={({ someMoreEntries }) =>
-                    (
-                      <React.Fragment>
+                    <VisibilitySensor
+                      onChange={this.isSaturday}
+                      partialVisibility={true}
+                      offset={{ top: 120 }}
+                    >
+                      <div>
+                        <ScrollableAnchor id={'saturday'}>
+                          <div className={classnames('flex flex-row flex-justify-between flex-align-center', styles.date_header)}>
+                            <h2 className={styles.day}>saturday</h2>
+                          </div>
+                        </ScrollableAnchor>
+
                         {
                           someMoreEntries.edges.map(event => (
                             <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
@@ -223,30 +219,25 @@ export default class Schedule extends Component {
                             </div>
                           ))
                         }
-                      </React.Fragment>
-                    )
-                  }
-                />
-              </div>
-            </VisibilitySensor>
 
 
-            <VisibilitySensor
-              onChange={this.isSunday}
-              partialVisibility={true}
-              offset={{ top: 120 }}
-            >
-              <div>
-                <ScrollableAnchor id={'sunday'}>
-                  <div className={classnames('flex', styles.date_header)}>
-                    <h2 className={styles.day}>sunday</h2>
-                  </div>
-                </ScrollableAnchor>
-                <StaticQuery
-                  query={SCHEDULE_2018_QUERY}
-                  render={({ someMoreMoreEntries }) =>
-                    (
-                      <React.Fragment>
+                      </div>
+                    </VisibilitySensor>
+
+
+                    <VisibilitySensor
+                      onChange={this.isSunday}
+                      partialVisibility={true}
+                      offset={{ top: 120 }}
+                    >
+                      <div>
+                        <ScrollableAnchor id={'sunday'}>
+                          <div className={classnames('flex', styles.date_header)}>
+                            <h2 className={styles.day}>sunday</h2>
+                          </div>
+                        </ScrollableAnchor>
+
+
                         {
                           someMoreMoreEntries.edges.map(event => (
                             <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
@@ -263,13 +254,12 @@ export default class Schedule extends Component {
                             </div>
                           ))
                         }
-                      </React.Fragment>
-                    )
-                  }
-                />
-              </div>
-            </VisibilitySensor>
-
+                      </div>
+                    </VisibilitySensor>
+                  </React.Fragment>
+                )
+              }
+            />
           </div>
         </div>
       </React.Fragment>
