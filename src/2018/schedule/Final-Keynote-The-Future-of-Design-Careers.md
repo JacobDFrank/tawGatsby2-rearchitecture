@@ -2,7 +2,7 @@
   day: Saturday
   start: '4:15PM'
   end: '5:00PM'
-  name: Final Keynote: The Future of Design Careers
+  name: 'Final Keynote: The Future of Design Careers'
   location: Webb Auditorium, Booth 1350
   speakers:
     - speaker:
