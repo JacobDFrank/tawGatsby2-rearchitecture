@@ -87,7 +87,7 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Event Name', name: 'name', widget: 'string' }
+      - { label: 'Event Name', name: 'name', widget: 'string', hint: 'Ex: Must have a unique name for each event. Naming as the same that exists will overwrite it.'}
       - { label: "Day", name: "day", widget: "select", required: true, options: ["Friday", "Saturday", "Sunday"] }
       - { label: 'Location', name: 'location', widget: 'string', pattern: ['^.{1,40}$', 'Must have no more than 40 characters']}
       - { label: "Event Type", name: "type", widget: "select", required: true, options: ["General", "Workshop", "Keynote", "Lecture"] }
@@ -98,5 +98,6 @@ collections:
         widget: 'list'
         required: true
         fields:
-          - {label: 'Speaker', name: 'speaker', widget: 'relation', collection: 'speakers2018', searchFields: ['name'], valueField: 'name', displayFields: ['name'], multiple: true, default: 'TAW Team', hint: 'Not picking a speaker will default to TAW Team'}
+          - {label: 'Speaker', name: 'speaker', widget: 'relation', required: false, collection: 'speakers2018', searchFields: ['name'], valueField: 'name', displayFields: ['name'], multiple: true, default: 'TAW Team', hint: 'Not picking a speaker will default to TAW Team'}
+          - { label: 'Speaker not in relation', name: 'other-speaker', widget: 'string', hint: 'Only to be used when speaker not in lineup. EX: Surprise Speaker Linup', required: false, pattern: ['^.{1,40}$', 'Must have no more than 40 characters']}
       - { label: 'Description', name: 'description', widget: 'string', pattern: ['^.{1,1200}$', 'Must have no more than 1200 characters']}

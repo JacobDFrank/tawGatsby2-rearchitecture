@@ -20,7 +20,7 @@ class Schedule extends React.Component {
   eventTypeClassName = (type) => {
     // const prefix = 'event_type-';
     switch (type) {
-      case 'General Event':
+      case 'General':
         return { baseColor: '#f4f4f4', foreColor: '#281E35', borderColor: '#e5e5e5', typeAboutColor: '#281E35'};
       case 'Lecture':
         return { baseColor: '#FF2350', foreColor: '#fff', typeAboutColor: '#FF2350'};
