@@ -19,7 +19,7 @@ export default class Speaker extends Component {
                     allMarkdownRemark.edges.map(speaker => (
                       <div className={classnames(styles.speakerSizing)} key={speaker.node.frontmatter.headshot}>
                         <SpeakerCards
-                          name={speaker.node.frontmatter.title}
+                          name={speaker.node.frontmatter.name}
                           job={speaker.node.frontmatter.job}
                           bio={speaker.node.frontmatter.bio}
                           webpage={speaker.node.frontmatter.webpage}
@@ -44,7 +44,7 @@ const SPEAKERS_2018_QUERY = graphql`
       edges {
         node {
           frontmatter {
-            title
+            name
             headshot
             job
             webpage

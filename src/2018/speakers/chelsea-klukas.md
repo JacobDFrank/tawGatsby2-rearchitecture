@@ -1,5 +1,5 @@
 ---
-title: Chelsea Klukas
+name: Chelsea Klukas
 headshot: images/uploads/Chelsea_Klukas.jpg
 job: Product Design Manager at Facebook
 webpage: http://www.chelscore.com

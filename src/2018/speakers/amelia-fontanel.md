@@ -1,5 +1,5 @@
 ---
-title: Amelia Fontanel
+name: Amelia Fontanel
 job: Associate Curator of the Cary Collection
 webpage: 'http://www.cary.rit.edu'
 headshot: images/uploads/Amelia_Fontanel.jpg

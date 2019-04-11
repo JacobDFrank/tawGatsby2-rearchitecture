@@ -1,5 +1,5 @@
 ---
-title: Miguel A Cardona Jr.
+name: Miguel A Cardona Jr.
 headshot: images/uploads/Miguel_Cardona.jpg
 job: Designer, Illustrator and Assistant Professor of New Media Design
 webpage: http://miggi.me/

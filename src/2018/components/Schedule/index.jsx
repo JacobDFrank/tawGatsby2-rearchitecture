@@ -21,22 +21,6 @@ class Schedule extends React.Component {
     };
   }
 
-  createSchedule = events => {
-    return (
-      <Scheduled
-        start={events.start}
-        end={events.end}
-        title={events.title}
-        presenterLocation={events.presenter_location}
-        type={events.type}
-        description={events.description}
-        key={events.title + events.end}
-      />
-    );
-  }
-
-
-
   initializeSchedule = (events, day) => {
     return (
       <div>
@@ -44,13 +28,13 @@ class Schedule extends React.Component {
           return (
             <div key={event.title + event.end}>
               <Scheduled
+                day={day}
+                title={event.title}
                 start={event.start}
                 end={event.end}
-                title={event.title}
                 presenterLocation={event.presenter_location}
                 type={event.type}
                 description={event.description}
-                day={day}
               />
             </div>
           );
@@ -131,7 +115,7 @@ class Schedule extends React.Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <div className={classnames('boundary-element', styles.boundaryElement_positioning)}></div>
         <Header pageName='schedule' />
         <div className={'container'}>
@@ -240,7 +224,7 @@ class Schedule extends React.Component {
 
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
