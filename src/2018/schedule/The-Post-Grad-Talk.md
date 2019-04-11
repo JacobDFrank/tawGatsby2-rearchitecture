@@ -2,8 +2,7 @@
 day: Friday
 start: '3:15PM'
 end: '4:00PM'
-name: The Post Grad Talk
-location: Where to go after college
+name: 'The Post Grad Talk: Where to go after college'
 speakers:
   - speaker:
     - Jen Byyny
