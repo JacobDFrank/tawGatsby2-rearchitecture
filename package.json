@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Jacob Frank <frankjacob42@gamil.com>",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@types/googlemaps": "^3.30.19",
     "@types/markerclustererplus": "^2.1.33",
     "babel-plugin-transform-regenerator": "^6.26.0",
@@ -12,6 +13,7 @@
     "body-scroll-lock": "^2.5.7",
     "classnames": "^2.2.6",
     "css-gridish": "^2.0.0",
+    "dotenv": "^7.0.0",
     "eslint-plugin-react": "^7.10.0",
     "gatsby": "^2.3.4",
     "gatsby-image": "^2.0.29",
@@ -27,6 +29,7 @@
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-plugin-sitemap": "^2.0.5",
+    "gatsby-source-contentful": "^2.0.48",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.2.4",
     "gatsby-transformer-sharp": "^2.1.13",

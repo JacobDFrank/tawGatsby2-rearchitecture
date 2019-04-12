@@ -1,4 +1,9 @@
-require('regenerator-runtime/runtime');
+const dotenv = require('dotenv');
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
+
 module.exports = {
   siteMetadata: {
     title: 'Thought At Work',
@@ -18,6 +23,16 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'xzwpudux1kbc',
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
+      },
+    },
+    '@contentful/gatsby-transformer-contentful-richtext',
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -27,7 +42,7 @@ module.exports = {
         anonymize: false
       }
     },
-    
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
