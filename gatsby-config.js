@@ -1,6 +1,4 @@
-const dotenv = require('dotenv');
-
-dotenv.config();
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -24,9 +22,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: 'xzwpudux1kbc',
+        spaceId: process.env.CONTENTFUL_SPACE_ID || '',
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
         downloadLocal: true,
       },
     },
