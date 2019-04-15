@@ -14,7 +14,11 @@ export default class HomeVideo extends Component {
           controls
           width='100%'
           height='50vw'
-          vimeoConfig={{ playerOptions: { title: true } }}
+          config={{
+            vimeo: {
+              playerOptions: { title: true }
+            }
+          }}
         />
       </div>
     );
