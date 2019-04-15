@@ -20,7 +20,6 @@ plugins: [{
   },
 }, ];
 
-
 //creating pages for only the projects (which are filtered based on the absolute path)
 exports.createPages = ({
   graphql,

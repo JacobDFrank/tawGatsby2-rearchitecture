@@ -38,7 +38,10 @@ module.exports = {
         anonymize: false
       }
     },
-
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {}
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
