@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import favicon from '../assets/images/faviconPurple.png';
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords, title, injectCSS }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -73,7 +73,9 @@ function SEO({ description, lang, meta, keywords, title }) {
             <meta property="twitter:description"
               content={metaDescription} />
             <meta property="twitter:image" content={metaImage} />
-
+            <style>
+              {injectCSS}
+            </style>
           </Helmet>
         );
       }}
@@ -85,11 +87,13 @@ SEO.defaultProps = {
   lang: 'en',
   meta: [],
   keywords: [],
-  title: ''
+  title: '',
+  injectCSS: ''
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
+  injectCSS: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),

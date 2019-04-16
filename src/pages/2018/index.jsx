@@ -13,7 +13,7 @@ export class index extends Component {
   render() {
     return (
       <Layout>
-        <SEO title="Home"/>
+        <SEO title="Home" injectCSS="body {overflow: hidden;}"/>
         <Home/>
       </Layout>
     );

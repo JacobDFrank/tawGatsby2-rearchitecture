@@ -25,8 +25,9 @@ export default class SpeakerCard extends Component {
     document.body.style.position = 'fixed';
     document.body.style.width = '100%';
     document.body.style.height = '100%';
+    document.getElementsByClassName('speaker_modal__background')[0].style.backgroundColor = 'rgba(40, 30, 53, 0.50)';
+    document.getElementsByClassName('speaker_modal__background')[0].style.zIndex = '15';
   }
-
   removeModalClick() {
     console.log('removed');
     this.setState({
@@ -36,6 +37,8 @@ export default class SpeakerCard extends Component {
     document.body.style.position = 'static';
     document.body.style.width = 'auto';
     document.body.style.height = 'auto';
+    document.getElementsByClassName('speaker_modal__background')[0].style.backgroundColor = 'transparent';
+    document.getElementsByClassName('speaker_modal__background')[0].style.zIndex = '0';
   }
 
   handleOutsideClick(e) {
@@ -75,8 +78,10 @@ export default class SpeakerCard extends Component {
               <div className={classnames(styles.modal_container__inner, 'gridish-container')}>
                 <div
                   onClick={this.removeModalClick}
-                  className={classnames(styles.modal__backgroundChange)}></div>
-                <div className={classnames(styles.modal_container__outer, 'dotGrid-background')}>
+                  className={classnames(styles.modal__backgroundChange)}>
+
+                </div>
+                <div className={classnames(styles.modal_container__outer)}>
                   <div className={classnames(styles.navContainer)}>
                     <div className={classnames(styles.navContainer_content, 'flex flex-align-center flex-justify-between flex-row flex-align-center')}>
                       <h2 className={classnames(styles.speakerInfo_h2__alteration)}>speaker info</h2>
