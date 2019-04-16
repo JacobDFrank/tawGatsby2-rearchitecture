@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import '../../2018/styles/index.scss';
+import classnames from 'classnames';
 import Navigation from './Navigation';
 import Footer from './Footer';
 // import './2017/styles-2017.scss';
 import polyPattern from '../assets/images/polyPattern.png';
-
+import HomeModalContainer from './Home/HomeModalContainer';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,8 +29,12 @@ const Layout = ({ children }) => (
     render={() =>
       (
         <React.Fragment>
+          {location.pathname == '/2018/' && 
+              <HomeModalContainer/>
+          }
+          <div className='speaker_modal__background'/>
           <div
-            className='dotGrid-background body-container--padding-top'
+            className={classnames('dotGrid_background__padding_top')}
             id="body-noScroll"
 
             style={
@@ -37,7 +42,6 @@ const Layout = ({ children }) => (
                 backgroundImage: `url(${polyPattern})`,
                 backgroundPosition: '50% 0',
                 backgroundRepeat: 'repeat',
-                backgroundColor: '#FFFFFF'
               }
             }
           >

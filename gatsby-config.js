@@ -19,6 +19,16 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-emotion',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['Nunito'],
+          urls: ['/fonts/fonts.css'],
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -37,10 +47,6 @@ module.exports = {
         // Setting this parameter is optional
         anonymize: false
       }
-    },
-    {
-      resolve: 'gatsby-plugin-netlify',
-      options: {}
     },
     {
       resolve: 'gatsby-source-filesystem',

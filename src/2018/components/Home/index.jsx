@@ -7,12 +7,12 @@ import HomeSplash from './HomeSplash';
 export default class index extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <HomeSplash/>
         <HomeAbout/>
         <HomeSpeakers/>
         <HomeVideo/>
-      </div>
+      </React.Fragment>
     );
   }
 }
