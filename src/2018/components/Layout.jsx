@@ -54,12 +54,13 @@ const Layout = ({ children }) => (
   />
 );
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+Layout.defaultProps = {
+  location: []
 };
 
-Layout.defaultProps = {
-  location: {}
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  location: PropTypes.array
 };
 
 export default Layout;
