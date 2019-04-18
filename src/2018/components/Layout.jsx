@@ -9,7 +9,7 @@ import Footer from './Footer';
 import polyPattern from '../assets/images/polyPattern.png';
 import HomeModalContainer from './Home/HomeModalContainer';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     // how would i make that regex dynamic???
     // https://www.leveluptutorials.com/tutorials/pro-gatsby-2/gatsby-image used this video for the code
@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
     render={() =>
       (
         <React.Fragment>
-          {location.pathname == '/2018/' && 
+          {this.props.location.pathname == '/2018/' && 
               <HomeModalContainer/>
           }
           <div className='speaker_modal__background'/>
