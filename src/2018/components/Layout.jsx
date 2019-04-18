@@ -9,11 +9,13 @@ import Footer from './Footer';
 import polyPattern from '../assets/images/polyPattern.png';
 import HomeModalContainer from './Home/HomeModalContainer';
 
-const Layout = ({ children, location }) => (
-  <StaticQuery
-    // how would i make that regex dynamic???
-    // https://www.leveluptutorials.com/tutorials/pro-gatsby-2/gatsby-image used this video for the code
-    query={graphql`
+export default function Layout({ children, location }) {
+
+  return (
+    <StaticQuery
+      // how would i make that regex dynamic???
+      // https://www.leveluptutorials.com/tutorials/pro-gatsby-2/gatsby-image used this video for the code
+      query={graphql`
       query SiteTitleQuery2018 {
         site {
           siteMetadata {
@@ -26,33 +28,34 @@ const Layout = ({ children, location }) => (
         }
       }
     `}
-    render={() =>
-      (
-        <React.Fragment>
-          {this.props.location.pathname == '/2018/' && 
-              <HomeModalContainer/>
-          }
-          <div className='speaker_modal__background'/>
-          <div
-            className={classnames('dotGrid_background__padding_top')}
-            id="body-noScroll"
-
-            style={
-              {
-                backgroundImage: `url(${polyPattern})`,
-                backgroundPosition: '50% 0',
-                backgroundRepeat: 'repeat',
-              }
+      render={() =>
+        (
+          <React.Fragment>
+            {location.pathname == '/2018/' &&
+              <HomeModalContainer />
             }
-          >
-            <Navigation />
-            {children}
-            <Footer />
-          </div>
-        </React.Fragment>
-      )}
-  />
-);
+            <div className='speaker_modal__background' />
+            <div
+              className={classnames('dotGrid_background__padding_top')}
+              id="body-noScroll"
+
+              style={
+                {
+                  backgroundImage: `url(${polyPattern})`,
+                  backgroundPosition: '50% 0',
+                  backgroundRepeat: 'repeat',
+                }
+              }
+            >
+              <Navigation />
+              {children}
+              <Footer />
+            </div>
+          </React.Fragment>
+        )}
+    />
+  );
+}
 
 Layout.defaultProps = {
   location: []
@@ -62,5 +65,3 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.array
 };
-
-export default Layout;
