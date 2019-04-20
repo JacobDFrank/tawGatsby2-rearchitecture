@@ -62,7 +62,7 @@ export default class Team extends Component {
               (
                 <React.Fragment>
                   {
-                    someMoreMoreEntries.edges.map(person => (
+                    this.shuffleArray(someMoreMoreEntries.edges).map(person => (
                       <div className={classnames(styles.speakerSizing)} key={person.node.name}>
                         <AboutCards
                           name={person.node.name}
