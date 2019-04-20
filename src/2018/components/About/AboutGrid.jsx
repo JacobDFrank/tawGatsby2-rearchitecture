@@ -58,11 +58,11 @@ export default class Team extends Component {
 
           <StaticQuery
             query={TEAM_2018_QUERY}
-            render={({ someEntries, someMoreEntries, someMoreMoreEntries }) =>
+            render={({ someEntries, someMoreEntries }) =>
               (
                 <React.Fragment>
                   {
-                    this.shuffleArray(someMoreMoreEntries.edges).map(person => (
+                    this.shuffleArray(someEntries.edges).map(person => (
                       <div className={classnames(styles.speakerSizing)} key={person.node.name}>
                         <AboutCards
                           name={person.node.name}
@@ -78,37 +78,23 @@ export default class Team extends Component {
                       </div>
                     ))
                   }
-                  {/* {
-                    someEntries.edges.map(person => (
-                      <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
+                  {
+                    this.shuffleArray(someMoreEntries.edges).map(person => (
+                      <div className={classnames(styles.speakerSizing)} key={person.node.name}>
                         <AboutCards
-                          name={person.node.frontmatter.name}
-                          headshot={person.node.frontmatter.headshot}
-                          role={person.node.frontmatter.role}
-                          year={person.node.frontmatter.year}
-                          major={person.node.frontmatter.major}
-                          webpage={person.node.frontmatter.webpage}
-                          // order={
-                          //   this.generateRan(someEntries.edges.length)
-                          // }
+                          name={person.node.name}
+                          headshot={person.node.headshot.fluid}
+                          role={person.node.role}
+                          year={person.node.year}
+                          major={person.node.major}
+                          webpage={person.node.webpage}
+                        // order={
+                        //   this.generateRan(someEntries.edges.length)
+                        // }
                         />
                       </div>
                     ))
                   }
-                  {
-                    this.shuffleArray(someMoreEntries.edges).map(person => (
-                      <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
-                        <AboutCards
-                          name={person.node.frontmatter.name}
-                          headshot={person.node.frontmatter.headshot}
-                          role={person.node.frontmatter.role}
-                          year={person.node.frontmatter.year}
-                          major={person.node.frontmatter.major}
-                          webpage={person.node.frontmatter.webpage}
-                        />
-                      </div>
-                    ))
-                  } */}
                 </React.Fragment>
               )
             }
@@ -121,37 +107,26 @@ export default class Team extends Component {
 
 const TEAM_2018_QUERY = graphql`
   query team2018 {
-  someEntries:allMarkdownRemark(filter: {frontmatter: {lead: {ne: false}}, fileAbsolutePath: {regex: "/2018/team/"}}) {
+  someEntries: allContentful2018TeamMembers(filter: {lead: {ne: false}}) {
+    totalCount
     edges {
-      node {
-        frontmatter {
-          name
-          headshot
-          role
-          major
-          year
-          webpage
-          lead
+			node
+      {
+        name
+        lead
+        year
+        major
+        role
+        webpage
+        headshot {
+        fluid(maxWidth: 400, maxHeight: 400) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
+      }
       }
     }
   }
-  someMoreEntries: allMarkdownRemark(filter: {frontmatter: {lead: {ne: true}}, fileAbsolutePath: {regex: "/2018/team/"}}) {
-    edges {
-      node {
-        frontmatter {
-          name
-          headshot
-          role
-          major
-          year
-          webpage
-          lead
-        }
-      }
-    }
-  }
-  someMoreMoreEntries: allContentful2018TeamMembers(filter: {lead: {ne: false}}) {
+  someMoreEntries: allContentful2018TeamMembers(filter: {lead: {ne: true}}) {
     totalCount
     edges {
 			node

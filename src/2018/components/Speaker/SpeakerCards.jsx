@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import styles from '../../styles/components/speakers/speakerCards.module.scss';
 import SpeakerModal from './SpeakerModal';
-
+import Img from 'gatsby-image';
 
 export default class SpeakerCard extends Component {
   constructor(props) {
@@ -59,8 +59,8 @@ export default class SpeakerCard extends Component {
         <div
           className={classnames(styles.cardSize)}
         >
-          <img className={classnames(styles.headshotContainer)}
-            src={'../../' + props.headshot}
+          <Img className={classnames(styles.headshotContainer)}
+            fluid={props.headshot}
             onClick={this.addModalClick}
           />
           <div
@@ -100,7 +100,7 @@ export default class SpeakerCard extends Component {
                       </button>
                     </div>
                   </div>
-                  <SpeakerModal links={props.links} name={props.name} bio={props.bio} job={props.job} headshot={'../../' + props.headshot} />
+                  <SpeakerModal links={props.links} name={props.name} bio={props.bio} job={props.job} headshot={props.headshot} />
                 </div>
               </div>
             </div>

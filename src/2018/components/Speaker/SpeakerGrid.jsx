@@ -12,18 +12,18 @@ export default class Speaker extends Component {
         <div className={classnames('content-Block--margin-top container flex gridish-container gridish-container--complete gridish-grid', styles.flexibleGrid)}>
           <StaticQuery
             query={SPEAKERS_2018_QUERY}
-            render={({ allMarkdownRemark }) =>
+            render={({ allContentful2018Speakers }) =>
               (
                 <React.Fragment>
                   {
-                    allMarkdownRemark.edges.map(speaker => (
-                      <div className={classnames(styles.speakerSizing)} key={speaker.node.frontmatter.headshot}>
+                    allContentful2018Speakers.edges.map(speaker => (
+                      <div className={classnames(styles.speakerSizing)} key={speaker.node.speakerName}>
                         <SpeakerCards
-                          name={speaker.node.frontmatter.name}
-                          job={speaker.node.frontmatter.job}
-                          bio={speaker.node.frontmatter.bio}
-                          webpage={speaker.node.frontmatter.webpage}
-                          headshot={speaker.node.frontmatter.headshot}
+                          name={speaker.node.speakerName}
+                          job={speaker.node.job}
+                          bio={speaker.node.bio.bio}
+                          webpage={speaker.node.webpage}
+                          headshot={speaker.node.headshot.fluid}
                         />
                       </div>
                     ))
@@ -40,17 +40,23 @@ export default class Speaker extends Component {
 
 const SPEAKERS_2018_QUERY = graphql`
   query speakers2018 {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/2018/speakers/" } }) {
-      edges {
-        node {
-          frontmatter {
-            name
-            headshot
-            job
-            webpage
-            bio
-          }
+    allContentful2018Speakers {
+    totalCount
+    edges {
+			node
+      {
+        speakerName
+        job
+				webpage
+        bio {
+          bio
+        }
+        headshot {
+        fluid(maxWidth: 400, maxHeight: 400) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
+      }
     }
+  }
   }`;

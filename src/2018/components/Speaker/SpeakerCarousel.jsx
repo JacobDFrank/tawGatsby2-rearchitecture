@@ -13,19 +13,17 @@ export default class SpeakerCarousel extends Component {
         <DragScroll height={'unset'} width={'unset'} className={classnames(styles.speaker_lineup__Carousel, 'flex')}>
           <StaticQuery
             query={SPEAKERSCAROUSEL_2018_QUERY}
-            render={({ allMarkdownRemark }) =>
+            render={({ allContentful2018Speakers }) =>
               (
                 <div className={classnames('flex')}>
                   {
-                    allMarkdownRemark.edges.map(speaker => (
+                    allContentful2018Speakers.edges.map(speaker => (
                       <div className={classnames(styles.speakerCard, styles.speaker_lineup__padding)}
-                        key={speaker.node.frontmatter.name}>
+                        key={speaker.node.speakerName}>
                         <SpeakerPhoto
-                          name={speaker.node.frontmatter.name}
-                          job={speaker.node.frontmatter.job}
-                          bio={speaker.node.frontmatter.bio}
-                          webpage={speaker.node.frontmatter.webpage}
-                          headshot={speaker.node.frontmatter.headshot}
+                          name={speaker.node.speakerName}
+                          job={speaker.node.job}
+                          headshot={speaker.node.headshot.fluid}
                         />
                       </div>
                     ))
@@ -42,17 +40,19 @@ export default class SpeakerCarousel extends Component {
 
 const SPEAKERSCAROUSEL_2018_QUERY = graphql`
   query speakersCarousel2018 {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/2018/speakers/" } }) {
-      edges {
-        node {
-          frontmatter {
-            name
-            headshot
-            job
-            webpage
-            bio
-          }
+    allContentful2018Speakers {
+    totalCount
+    edges {
+			node
+      {
+        speakerName
+        job
+        headshot {
+        fluid(maxWidth: 400, maxHeight: 400) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
+      }
     }
+  }
   }`;

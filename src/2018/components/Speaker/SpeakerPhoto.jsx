@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import styles from '../../styles/components/speakers/speakerPhoto.module.scss';
+import Img from 'gatsby-image';
 
 export default class SpeakerPhoto extends Component {
   constructor(props) {
@@ -15,8 +16,8 @@ export default class SpeakerPhoto extends Component {
 
     return (
       <div>
-        <img className={classnames(styles.headshotContainer)}
-          src={'../../' + props.headshot}
+        <Img className={classnames(styles.headshotContainer)}
+          fluid={props.headshot}
         />
         <h2 className={classnames(styles.speakerCard_text__spacing)}>
           {props.name}

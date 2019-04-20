@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import styles from '../../styles/components/speakers/speakerModal.module.scss';
 import outsideLinkLogo from '../../assets/images/outsideLinkLogo.svg';
 import MediaQuery from 'react-responsive';
+import Img from 'gatsby-image';
 
 export default class SpeakerModal extends Component {
   constructor(props) {
@@ -21,8 +22,8 @@ export default class SpeakerModal extends Component {
         <div className={('flex flex-justify-between')}>
           <div className={('flex flex-column', styles.textColumn)}>
             <MediaQuery maxWidth={480}>
-              <img className={classnames('flex-column', styles.headshotContainer)}
-                src={props.headshot}
+              <Img className={classnames('flex-column', styles.headshotContainer)}
+                fluid={props.headshot}
               />
             </MediaQuery>
             <h1 className={classnames(styles.name)}>{props.name}</h1>
@@ -38,8 +39,8 @@ export default class SpeakerModal extends Component {
             )}
           </div>
           <MediaQuery minWidth={481}>
-            <img className={classnames('flex-column', styles.headshotContainer)}
-              src={props.headshot}
+            <Img className={classnames('flex-column', styles.headshotContainer)}
+              fluid={props.headshot}
             />
           </MediaQuery>
         </div>
