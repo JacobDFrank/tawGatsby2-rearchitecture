@@ -183,10 +183,6 @@ export default class Schedule extends Component {
                             </div>
                           ))
                         }
-
-                        )
-                      }
-                    />
                       </div>
                     </VisibilitySensor>
 

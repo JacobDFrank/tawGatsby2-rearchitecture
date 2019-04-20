@@ -16,9 +16,7 @@ export default class SpeakerPhoto extends Component {
 
     return (
       <div>
-        <Img className={classnames(styles.headshotContainer)}
-          fluid={props.headshot}
-        />
+        <Img className={classnames(styles.headshotContainer)} fluid={props.headshot}> </Img>
         <h2 className={classnames(styles.speakerCard_text__spacing)}>
           {props.name}
         </h2>
