@@ -169,16 +169,15 @@ export default class Schedule extends Component {
                         </ScrollableAnchor>
                         {
                           someEntries.edges.map(event => (
-                            <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
+                            <div key={event.node.name}>
                               <ScheduleEntry
-                                day={event.node.frontmatter.day}
-                                name={event.node.frontmatter.name}
-                                start={event.node.frontmatter.start}
-                                end={event.node.frontmatter.end}
-                                location={event.node.frontmatter.location}
-                                speakers={event.node.frontmatter.speakers}
-                                type={event.node.frontmatter.type}
-                                description={event.node.frontmatter.description}
+                                name={event.node.name}
+                                start={event.node.startTime}
+                                end={event.node.endTime}
+                                location={event.node.location}
+                                speakers={event.node.speaker}
+                                type={event.node.eventType}
+                                description={event.node.description}
                               />
                             </div>
                           ))
@@ -201,16 +200,15 @@ export default class Schedule extends Component {
 
                         {
                           someMoreEntries.edges.map(event => (
-                            <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
+                            <div key={event.node.name}>
                               <ScheduleEntry
-                                day={event.node.frontmatter.day}
-                                name={event.node.frontmatter.name}
-                                start={event.node.frontmatter.start}
-                                end={event.node.frontmatter.end}
-                                location={event.node.frontmatter.location}
-                                speakers={event.node.frontmatter.speakers}
-                                type={event.node.frontmatter.type}
-                                description={event.node.frontmatter.description}
+                                name={event.node.name}
+                                start={event.node.startTime}
+                                end={event.node.endTime}
+                                location={event.node.location}
+                                speakers={event.node.speaker}
+                                type={event.node.eventType}
+                                description={event.node.description}
                               />
                             </div>
                           ))
@@ -236,16 +234,15 @@ export default class Schedule extends Component {
 
                         {
                           someMoreMoreEntries.edges.map(event => (
-                            <div key={event.node.frontmatter.name + event.node.frontmatter.end}>
+                            <div key={event.node.name}>
                               <ScheduleEntry
-                                day={event.node.frontmatter.day}
-                                name={event.node.frontmatter.name}
-                                start={event.node.frontmatter.start}
-                                end={event.node.frontmatter.end}
-                                location={event.node.frontmatter.location}
-                                speakers={event.node.frontmatter.speakers}
-                                type={event.node.frontmatter.type}
-                                description={event.node.frontmatter.description}
+                                name={event.node.name}
+                                start={event.node.startTime}
+                                end={event.node.endTime}
+                                location={event.node.location}
+                                speakers={event.node.speaker}
+                                type={event.node.eventType}
+                                description={event.node.description}
                               />
                             </div>
                           ))
@@ -265,55 +262,85 @@ export default class Schedule extends Component {
 
 const SCHEDULE_2018_QUERY = graphql`
 query schedule2018 {
-  someEntries: allMarkdownRemark(filter: {frontmatter: {day: {eq: "Friday"}}, fileAbsolutePath: {regex: "/2018/schedule/"}}, sort: {order: ASC, fields: [frontmatter___start]}) {
+  someEntries: allContentful2018Schedule (filter: {
+      startTime: {
+      gt: "2018-10-18T23:59:59"
+      lt:"2018-10-20T00:00:00"
+    	}
+    }
+      , sort: {order: ASC, fields: startTime}
+    ) {
     edges {
-      node {
-        frontmatter {
-          name
-          day
-          location
-          type
-          start
-          end
-          description
-          speakers{
-            speaker
+			node
+      {
+        name
+        startTime(formatString:"LT")
+        endTime(formatString:"LT")
+        eventType
+        location
+        speaker {
+          speakerName
+        }
+        description
+        {
+          childMarkdownRemark {
+            html
           }
         }
       }
     }
   }
-  someMoreEntries: allMarkdownRemark(filter: {frontmatter: {day: {eq: "Saturday"}}, fileAbsolutePath: {regex: "/2018/schedule/"}}, sort: {order: ASC, fields: [frontmatter___start]}) {
+  someMoreEntries: allContentful2018Schedule (filter: {
+      startTime: {
+      gt: "2018-10-19T23:59:59"
+      lt:"2018-10-21T00:00:00"
+    	}
+    }
+      , sort: {order: ASC, fields: startTime}
+    ) {
     edges {
-      node {
-        frontmatter {
-          name
-          day
-          location
-          type
-          start
-          end
-          description
-          speakers{
-            speaker
+			node
+      {
+        name
+        startTime(formatString:"LT")
+        endTime(formatString:"LT")
+        eventType
+        location
+        speaker {
+          speakerName
+        }
+        description
+        {
+          childMarkdownRemark {
+            html
           }
         }
       }
     }
   }
-  someMoreMoreEntries: allMarkdownRemark(filter: {frontmatter: {day: {eq: "Sunday"}}, fileAbsolutePath: {regex: "/2018/schedule/"}}, sort: {order: ASC, fields: [frontmatter___start]}) {
+  someMoreMoreEntries: allContentful2018Schedule (filter: {
+      startTime: {
+      gt: "2018-10-20T23:59:59"
+      lt:"2018-10-22T00:00:00"
+    	}
+    }
+      , sort: {order: ASC, fields: startTime}
+    ) {
     edges {
-      node {
-        frontmatter {
-          name
-          day
-          location
-          type
-          start
-          end
-          description
-          speakers{
-            speaker
+			node
+      {
+        name
+        startTime(formatString:"LT")
+        endTime(formatString:"LT")
+        eventType
+        location
+        speaker {
+          speakerName
+        }
+        description
+        {
+          childMarkdownRemark {
+            html
           }
         }
       }

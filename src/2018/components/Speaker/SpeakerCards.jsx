@@ -57,6 +57,7 @@ export default class SpeakerCard extends Component {
     return (
       <div>
         <div
+          onClick={this.addModalClick}
           className={classnames(styles.cardSize)}
         >
           <Img className={classnames(styles.headshotContainer)}
@@ -100,7 +101,7 @@ export default class SpeakerCard extends Component {
                       </button>
                     </div>
                   </div>
-                  <SpeakerModal links={props.links} name={props.name} bio={props.bio} job={props.job} headshot={props.headshot} />
+                  <SpeakerModal links={props.webpage} name={props.name} bio={props.bio} job={props.job} headshot={props.headshot} />
                 </div>
               </div>
             </div>

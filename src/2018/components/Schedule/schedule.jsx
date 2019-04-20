@@ -42,7 +42,9 @@ class Schedule extends React.Component {
     let end = this.props.end.toLowerCase();
     let name = this.props.name;
     let location = this.props.location;
-    let speakers = this.props.speakers[0].speaker.join(', ');
+    let speakers = this.props.speakers.map(function (speakers) {
+      return speakers['speakerName'];
+    }).join(', ');
     let type = this.props.type;
     let description = this.props.description;
 
@@ -82,13 +84,14 @@ class Schedule extends React.Component {
             </div>
             <p className={styles.location}>{speakers + ' - ' + location}</p>
             <div className={classnames(styles.event_description)} style={{ display: eventOpen }}>
-              <p className={classnames(styles.event_description__color)}>
-                <span
-                  style={{ color: this.eventTypeClassName(type).typeAboutColor, fontWeight: 'bold' }}
-                >
-                  {type + ': '}
-                </span>
-                {description}
+              <p
+                style={{ color: this.eventTypeClassName(type).typeAboutColor, fontWeight: 'bold' }}
+              >
+                {type}
+              </p>
+              <p className={classnames(styles.event_description__color)} dangerouslySetInnerHTML={{
+                __html:description.childMarkdownRemark.html
+              }}>
               </p>
             </div>
           </div>
