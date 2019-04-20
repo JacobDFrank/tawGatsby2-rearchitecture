@@ -58,10 +58,27 @@ export default class Team extends Component {
 
           <StaticQuery
             query={TEAM_2018_QUERY}
-            render={({ someEntries, someMoreEntries }) =>
+            render={({ someEntries, someMoreEntries, someMoreMoreEntries }) =>
               (
                 <React.Fragment>
                   {
+                    someMoreMoreEntries.edges.map(person => (
+                      <div className={classnames(styles.speakerSizing)} key={person.node.name}>
+                        <AboutCards
+                          name={person.node.name}
+                          headshot={person.node.headshot.fluid}
+                          role={person.node.role}
+                          year={person.node.year}
+                          major={person.node.major}
+                          webpage={person.node.webpage}
+                        // order={
+                        //   this.generateRan(someEntries.edges.length)
+                        // }
+                        />
+                      </div>
+                    ))
+                  }
+                  {/* {
                     someEntries.edges.map(person => (
                       <div className={classnames(styles.speakerSizing)} key={person.node.frontmatter.name}>
                         <AboutCards
@@ -91,7 +108,7 @@ export default class Team extends Component {
                         />
                       </div>
                     ))
-                  }
+                  } */}
                 </React.Fragment>
               )
             }
@@ -131,6 +148,25 @@ const TEAM_2018_QUERY = graphql`
           webpage
           lead
         }
+      }
+    }
+  }
+  someMoreMoreEntries: allContentful2018TeamMembers(filter: {lead: {ne: false}}) {
+    totalCount
+    edges {
+			node
+      {
+        name
+        lead
+        year
+        major
+        role
+        webpage
+        headshot {
+        fluid(maxWidth: 400, maxHeight: 400) {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
+      }
       }
     }
   }

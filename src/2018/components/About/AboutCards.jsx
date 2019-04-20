@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import styles from '../../styles/components/about/aboutCards.module.scss';
 import outsideLinkLogo from '../../assets/images/outsideLinkLogo.svg';
+import Img from 'gatsby-image';
 
 export default class SpeakerCard extends Component {
   constructor(props) {
@@ -19,8 +20,9 @@ export default class SpeakerCard extends Component {
         <div
           className={classnames(styles.cardSize)}
         >
-          <div style={{ backgroundImage: `url(${'../../' + props.headshot})` }} className={classnames(styles.headshotContainer)}>
-          </div>
+          <Img 
+            fluid={props.headshot} className={classnames(styles.headshotContainer)}>
+          </Img>
           <p>{props.order}</p>
           <div
             className={classnames(styles.speakerCard_text)}>
