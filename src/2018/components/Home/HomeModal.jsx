@@ -110,9 +110,7 @@ export default class SpeakerCard extends Component {
       <div className='home_modal__background'>
         <div>
           {this.state.popupVisible && (
-            <div className={classnames(styles.modal_container__inner, 'gridish-container')}
-              onClick={this.removeModalClick}
-            >
+            <div className={classnames(styles.modal_container__inner, 'gridish-container')}>
               <div className={classnames(styles.modal_container__outer)}>
                 <div className={classnames(styles.navContainer_content, 'flex flex-justify-end')}>
                   <button
