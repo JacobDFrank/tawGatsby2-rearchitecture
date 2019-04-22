@@ -279,7 +279,7 @@ query schedule2018 {
         eventType
         location
         speaker {
-          name
+          speakerName
         }
         description
         {
@@ -307,7 +307,7 @@ query schedule2018 {
         eventType
         location
         speaker {
-          name
+          speakerName
         }
         description
         {
@@ -335,7 +335,7 @@ query schedule2018 {
         eventType
         location
         speaker {
-          name
+          speakerName
         }
         description
         {

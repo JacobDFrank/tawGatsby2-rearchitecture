@@ -17,9 +17,9 @@ export default class Speaker extends Component {
                 <React.Fragment>
                   {
                     allContentful2018Speakers.edges.map(speaker => (
-                      <div className={classnames(styles.speakerSizing)} key={speaker.node.name}>
+                      <div className={classnames(styles.speakerSizing)} key={speaker.node.speakerName}>
                         <SpeakerCards
-                          name={speaker.node.name}
+                          name={speaker.node.speakerName}
                           job={speaker.node.job}
                           bio={speaker.node.bio.bio}
                           webpage={speaker.node.webpage}
@@ -45,7 +45,7 @@ const SPEAKERS_2018_QUERY = graphql`
     edges {
 			node
       {
-        name
+        speakerName
         job
 				webpage
         bio {

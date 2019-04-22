@@ -43,7 +43,7 @@ class Schedule extends React.Component {
     let name = this.props.name;
     let location = this.props.location;
     let speakers = this.props.speakers.map(function (speakers) {
-      return speakers['name'];
+      return speakers['speakerName'];
     }).join(', ');
     let type = this.props.type;
     let description = this.props.description;

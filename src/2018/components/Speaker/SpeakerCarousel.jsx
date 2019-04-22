@@ -19,9 +19,9 @@ export default class SpeakerCarousel extends Component {
                   {
                     allContentful2018Speakers.edges.map(speaker => (
                       <div className={classnames(styles.speakerCard, styles.speaker_lineup__padding)}
-                        key={speaker.node.name}>
+                        key={speaker.node.speakerName}>
                         <SpeakerPhoto
-                          name={speaker.node.name}
+                          name={speaker.node.speakerName}
                           job={speaker.node.job}
                           headshot={speaker.node.headshot.fluid}
                         />
@@ -45,7 +45,7 @@ const SPEAKERSCAROUSEL_2018_QUERY = graphql`
     edges {
 			node
       {
-        name
+        speakerName
         job
         headshot {
         fluid(maxWidth: 400, maxHeight: 400) {
