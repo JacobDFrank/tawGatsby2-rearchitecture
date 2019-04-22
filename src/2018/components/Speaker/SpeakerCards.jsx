@@ -11,12 +11,24 @@ export default class SpeakerCard extends Component {
     this.addModalClick = this.addModalClick.bind(this);
     this.removeModalClick = this.removeModalClick.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.escFunction = this.escFunction.bind(this);
 
     this.state = {
       popupVisible: false,
     };
   }
 
+  escFunction(event) {
+    if (event.keyCode === 27) {
+      this.removeModalClick();
+    }
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', this.escFunction, false);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.escFunction, false);
+  }
   addModalClick() {
     this.setState({
       popupVisible: true

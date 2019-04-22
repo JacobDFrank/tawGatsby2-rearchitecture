@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
-import styles from '../../styles/components/home/homeCards.module.scss';
+import styles from '../../styles/components/home/homeModalContainer.module.scss';
 import HomeModal from './HomeModal';
 import modal_closeButton from '../../assets/homeModal/modal_closeButton.svg';
 import { css } from '@emotion/core';
@@ -17,9 +17,23 @@ export default class SpeakerCard extends Component {
     this.removeModalClick = this.removeModalClick.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
 
+    this.escFunction = this.escFunction.bind(this);
+
     this.state = {
       popupVisible: true,
     };
+  }
+
+  escFunction(event) {
+    if (event.keyCode === 27) {
+      this.removeModalClick();
+    }
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', this.escFunction, false);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.escFunction, false);
   }
 
   addModalClick() {
@@ -52,29 +66,25 @@ export default class SpeakerCard extends Component {
 
   render() {
     return (
-      <div className='home_modal__background'
-        onClick={this.removeModalClick}
-      >
+      <div className='home_modal__background'>
         <div>
           {this.state.popupVisible && (
             <div>
               <div className={classnames(styles.modal_container__inner, 'gridish-container')}>
                 <div className={classnames(styles.modal_container__outer)}>
-                  <div className={classnames(styles.navContainer)}>
-                    <div className={classnames(styles.navContainer_content, 'flex flex-justify-end')}>
-                      <button
-                        className={classnames(
-                          'hamburger hamburger--elastic is-active',
-                        )}
-                        type='button'
-                        aria-label='Menu'
-                        aria-controls='navigation'
-                      >
-                        <img css={modal_closeButton__size} src={modal_closeButton} onClick={this.removeModalClick}></img>
-                      </button>
-                    </div>
+                  <div className={classnames(styles.navContainer_content, 'flex flex-justify-end')}>
+                    <button
+                      className={classnames(
+                        'hamburger hamburger--elastic is-active',
+                      )}
+                      type='button'
+                      aria-label='Menu'
+                      aria-controls='navigation'
+                    >
+                      <img css={modal_closeButton__size} src={modal_closeButton} onClick={this.removeModalClick}></img>
+                    </button>
                   </div>
-                  <HomeModal/>
+                  <HomeModal />
                 </div>
               </div>
             </div>
