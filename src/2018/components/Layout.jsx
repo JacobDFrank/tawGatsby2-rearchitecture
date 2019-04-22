@@ -7,9 +7,8 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 // import './2017/styles-2017.scss';
 import polyPattern from '../assets/images/polyPattern.png';
-import HomeModalContainer from './Home/HomeModalContainer';
 
-export default function Layout({ children, location }) {
+export default function Layout({ children }) {
 
   return (
     <StaticQuery
@@ -31,9 +30,6 @@ export default function Layout({ children, location }) {
       render={() =>
         (
           <React.Fragment>
-            {location.pathname == '/2018/' &&
-              <HomeModalContainer />
-            }
             <div className='speaker_modal__background' />
             <div
               className={classnames('dotGrid_background__padding_top')}
