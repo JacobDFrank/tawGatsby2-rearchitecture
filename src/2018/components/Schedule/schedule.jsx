@@ -38,7 +38,7 @@ class Schedule extends React.Component {
   */
 
   mapSpeakers = (speakers) => {
-    return speakers['speakerName'];
+    return speakers['name'];
   };
 
   render() {
@@ -51,7 +51,7 @@ class Schedule extends React.Component {
       console.log(this.props.speakers);
       
       speakers = this.props.speakers.map(function (speakers) {
-        return speakers['speakerName'];
+        return speakers['name'];
       }).join(', ');
     } else {
       speakers = 'TAW Team';
