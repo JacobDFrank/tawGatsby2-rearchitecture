@@ -42,9 +42,10 @@ class Schedule extends React.Component {
     let end = this.props.end.toLowerCase();
     let name = this.props.name;
     let location = this.props.location;
-    let speakers = this.props.speakers.map(function (speakers) {
-      return speakers['speakerName'];
-    }).join(', ');
+    let speakers = this.props.speakers ? null : 'TAW Team';
+    // let speakers = this.props.speakers.map(function (speakers) {
+    //   return speakers['speakerName'];
+    // }).join(', ');
     let type = this.props.type;
     let description = this.props.description;
 
